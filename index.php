@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/bootstrap/bootstrap.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <title>Comme à la maison produits à mettre en vente</title>
+    <link rel="stylesheet" href="/public/css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/media.css">
+    <title>Projet perso comme à la maison vente de produit fait maison</title>
 </head>
+
 <body>
+    <!-- NAVBAR -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-light">
 
             <div class="container-fluid " id="navbarText">
-                <img src="/assets/img/logo.png" alt="logo comme à la maison" width="150px" height="150px">
+                <img src="/public/img/logo.png" alt="logo comme à la maison" width="150px" height="150px">
                 <a class="navbar-brand ms-3" href="#" id="navBarText">Comme à la maison</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
                     aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,13 +43,27 @@
         </nav>
     </header>
 
+    <!-- FIN NAVBAR -->
+
+    <div class="main">
+        <div class="card text-center ms-5" style="width: 19rem;">
+            <div class="card-body ">
+                <h5 class="card-title">Pour mettre en vente vos produits c'est ici !</h5>
+                
+                <a href="#productToSell.html" class="btn btn-color">Commencer à vendre</a>
+                <a href="#" class="btn btn-outline-success mt-2">Comment ca marche</a>
+                
+            </div>
+        </div>
 
 
+    </div>
 
+    <footer>
 
+    </footer>
 
-
-
-    <script src="/assets/app/app.js"></script>
+<script src="/public/app/app.js"></script>
 </body>
+
 </html>

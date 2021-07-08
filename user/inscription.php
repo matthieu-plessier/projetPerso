@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/bootstrap/bootstrap.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/public/css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="/public/public/css/style.css">
     
     <title>Formulaire d'inscription au site comme à la maison</title>
 </head>
@@ -13,7 +13,7 @@
     <nav class="navbar navbar-expand-lg navbar-light">
 
         <div class="container-fluid " id="navbarText">
-            <img src="/assets/img/logo.png" alt="logo comme à la maison" width="150px" height="150px">
+            <img src="/public/img/logo.png" alt="logo comme à la maison" width="150px" height="150px">
             <a class="navbar-brand ms-3" href="#" id="navBarText">Comme à la maison</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
                 aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
