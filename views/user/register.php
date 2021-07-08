@@ -71,6 +71,7 @@
                     <input 
                         type="text" 
                         name="firstname"
+                        placeholder="Entrez votre prénom"
                         class="form-control  <?=isset($error['firstname']) ? 'errorField' : ''?>" 
                         value="<?=htmlentities($firstname ?? '') ?>"
                         autocomplete="given-name"
@@ -91,6 +92,7 @@
                         class="form-control  <?=isset($error['email']) ? 'errorField' : ''?>" 
                         id="email" 
                         autocomplete="email"
+                        pattern="<?=REGEXP_EMAIL?>"
                         placeholder="name@example.com">
                 <div class="error"><?=$error['email'] ?? ''?></div>
                 </div>
@@ -98,11 +100,17 @@
             <!-- PSEUDO -->
 
                 <div class="mb-3">
-                    <label for="nickname " class="form-label">Votre pseudo* :</label>
+                    <label for="nickname" class="form-label">Votre pseudo* :</label>
                     <input 
                         type="text" 
-                        class="form-control" 
-                        id="nicknameRegistration">
+                        name="nickname"
+                        class="form-control <?=isset($error['nickname']) ? 'errorField' : ''?>" 
+                        value="<?=htmlentities($nickname ?? '') ?>"
+                        autocomplete="nickname"
+                        placeholder="Votre pseudo"
+                        pattern="<?=REGEXP_PSEUDO?>"
+                        id="nickname">
+                <div class="error"><?=$error['nickname'] ?? ''?></div>
                 </div>
                 
             <!-- MOT DE PASSE -->
@@ -111,15 +119,25 @@
                     <label for="password " class="form-label">Votre mot de passe * :</label>
                     <input 
                         type="password" 
-                        class="form-control" 
-                        id="passwordRegistration">
+                        name="password"
+                        class="form-control <?=isset($error['password']) ? 'errorField' : ''?>" 
+                        value="<?=htmlentities($password ?? '') ?>"
+                        pattern="<?=REGEXP_PASSWORD?>"
+                        autocomplete="new-password"
+                        id="password">
                 </div>
 
             <!-- CONFIRMATION DE PASSE -->
 
                 <div class="mb-3">
                     <label for="password " class="form-label">Confirmation de votre mot de passe* :</label>
-                    <input type="password" class="form-control" id="confirmPasswordRegistration">
+                    <input 
+                    type="password" 
+                    name="password"
+                    value="<?=htmlentities($password ?? '') ?>"
+                    class="form-control <?=isset($error['password']) ? 'errorField' : ''?>" 
+                    pattern="<?=REGEXP_PASSWORD?>"
+                    id="confirmPassword">
                 </div>
                 
                 <button type="submit" class="btn btn-success">Envoyé</button>

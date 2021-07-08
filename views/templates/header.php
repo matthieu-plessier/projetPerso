@@ -17,7 +17,7 @@
 
             <div class="container-fluid " id="navbarText">
                 <img src="/public/img/logo.png" alt="logo comme à la maison" width="150px" height="150px">
-                <a class="navbar-brand ms-3" href="#" id="navBarText">Comme à la maison</a>
+                <a class="navbar-brand ms-3" href="/index.php" id="navBarText">Comme à la maison</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
                     aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -31,10 +31,10 @@
                             <a class="nav-link me-2" aria-current="page" href="#">Pour moi</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link me-2" aria-current="page" href="/controllers/addUser_controller.php">Inscription</a>
+                            <a class="nav-link me-2" aria-current="page" href="/controllers/addUser_controller.php">register</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#">Connection</a>
+                            <a class="nav-link" aria-current="page" href="/">Connection</a>
                         </li>
                     </ul>
                 </div>

@@ -11,7 +11,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $testRegex = preg_match('/'.REGEXP_STR_NO_NUMBER.'/',$lastname);
         // Avec une regex (constante déclarée plus haut), on vérifie si c'est le format attendu 
         if(!$testRegex){
-            $error["lastname"] = "Le nom n'est pas au bon format!!"; 
+            $error["lastname"] = "Le nom n'est pas au bon format"; 
         } else {
             // Dans ce cas précis, on vérifie aussi la longueur de chaine (on aurait pu le faire aussi direct dans la regex)
             if(strlen($lastname)<=1 || strlen($lastname)>=70){
@@ -19,9 +19,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             }
         }
     } else { // Pour les champs obligatoires, on retourne une erreur
-        $error["lastname"] = "Vous devez entrer un nom!!";
+        $error["lastname"] = "Vous devez entrer un nom";
     }
-}
+
 // firstname : Nettoyage et validation
     $firstname = trim(filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES));
 
@@ -47,5 +47,28 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $error["email"] = "L'adresse mail est obligatoire!!"; 
     }
 
+// Pseudo : Nettoyage et validation
+    $nickname = trim(filter_input(INPUT_POST, 'nickname', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES));
 
-include(dirname(__FILE__).'/../views/user/inscription.php');
+    if(!empty($nickname)){
+        $testRegex = preg_match('/'.REGEXP_PSEUDO.'/',$nickname);
+        if(!$testRegex){
+            $error["nickname"] = "Le pseudo n'est pas au bon format!!"; 
+        } else {
+            if(strlen($nickname)<=1 || strlen($nickname)>=70){
+            $error["nickname"] = "La longueur de chaine n'est pas bonne";
+        }
+    }
+    }
+
+
+
+
+
+
+
+
+
+}
+
+include(dirname(__FILE__).'/../views/user/register.php');
