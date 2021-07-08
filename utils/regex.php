@@ -1,6 +1,6 @@
 <?php
 // Name, FirstName, Nationality, City, Diplome, Activity
-define('REGEXP_STR_NO_NUMBER', "/^[A-Za-z-éèêëàâäôöûüç' ]*$/");
+define('REGEXP_STR_NO_NUMBER', "^[A-Za-z-éèêëàâäôöûüç' ]*$");
 
 // Date de naissance
 define('REGEXP_NUMBER_DATE_OF_BIRTH', "/^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|(1)[0-2]))(\/)\d{4}$/");

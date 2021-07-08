@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/css/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="/public/css/style.css">
-    <link rel="stylesheet" href="/public/css/media.css">
     <title>Projet perso comme à la maison vente de produit fait maison</title>
 </head>
 
@@ -32,7 +31,7 @@
                             <a class="nav-link me-2" aria-current="page" href="#">Pour moi</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link me-2" aria-current="page" href="user/inscription.php">Inscription</a>
+                            <a class="nav-link me-2" aria-current="page" href="/controllers/addUser_controller.php">Inscription</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="#">Connection</a>
