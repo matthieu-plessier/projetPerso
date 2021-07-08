@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/css/bootstrap/bootstrap.css">
-    <link rel="stylesheet" href="/public/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/style.css">
     
     <title>Formulaire d'inscription au site comme à la maison</title>
 </head>
@@ -72,11 +72,21 @@
                 </div>
                 <div class="mb-3">
                     <label for="lastname" class="form-label">Votre nom* :</label>
-                    <input type="text" class="form-control" id="nameRegistration" aria-describedby="nameHelp">
+                    <input 
+                        type="text" 
+                        class="form-control"
+                        title="Veuillez entrer un nom sans chiffres"
+                        id="lastname" 
+                        name="lastname"
+                        autocomplete="family-name"
+                        placeholder="Entrez votre nom">
                 </div>
                 <div class="mb-3">
                     <label for="surname" class="form-label">Votre prénom* :</label>
-                    <input type="text" class="form-control" id="surnameRegistration">
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="surnameRegistration">
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Votre adresse mail* :</label>
