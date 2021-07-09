@@ -28,7 +28,10 @@
                             <a class="nav-link ms-md-5 me-md-2" aria-current="page" href="#index">Les produits</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link me-2" aria-current="page" href="/recipes.php">Recettes</a>
+                            <a class="nav-link me-2" aria-current="page" href="/bodyRecipes.php">Recettes pour le corps</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link me-2" aria-current="page" href="/homeRecipes.php">Recettes pour la maison</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link me-2" aria-current="page" href="/controllers/addUser_controller.php">Inscription</a>
