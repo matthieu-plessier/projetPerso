@@ -60,7 +60,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
     }
     }
-
+// Password : validation
+    
+    if (!empty($password)) {
+        $testRegex = preg_match('/'.REGEXP_PASSWORD.'/',$password);
+        
+    }
 
 
 

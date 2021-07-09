@@ -130,10 +130,10 @@
             <!-- CONFIRMATION DE PASSE -->
 
                 <div class="mb-3">
-                    <label for="password " class="form-label">Confirmation de votre mot de passe* :</label>
+                    <label for="confirmPassword " class="form-label">Confirmation de votre mot de passe* :</label>
                     <input 
                     type="password" 
-                    name="password"
+                    name="confirmPassword"
                     value="<?=htmlentities($password ?? '') ?>"
                     class="form-control <?=isset($error['password']) ? 'errorField' : ''?>" 
                     pattern="<?=REGEXP_PASSWORD?>"
