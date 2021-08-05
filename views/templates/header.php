@@ -16,7 +16,7 @@
         <nav class="navbar navbar-expand-lg navbar-light">
 
             <div class="container-fluid " id="navbarText">
-                
+
                 <a class="navbar-brand ms-3" href="/index.php" id="navBarText">Comme à la maison</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
                     aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,20 +24,35 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarScroll">
                     <ul class="navbar-nav my-2 my-lg-0 navbar-nav-scroll text-center">
-                        <li class="nav-item">
-                            <a class="nav-link ms-md-5 me-md-2" aria-current="page" href="#index">Les produits</a>
+                    <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Nos produits
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                <li><a class="nav-link me-2" aria-current="page" href="/bodyRecipes.php">Pour le corps</a></li>
+                                <li><a class="nav-link me-2" aria-current="page" href="/homeRecipes.php">Pour la maison</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Nos recettes
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                <li><a class="nav-link me-2" aria-current="page" href="/bodyRecipes.php">Pour le corps</a></li>
+                                <li><a class="nav-link me-2" aria-current="page" href="/homeRecipes.php">Pour la maison</a></li>
+                                
+                            </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link me-2" aria-current="page" href="/bodyRecipes.php">Recettes pour le corps</a>
+                            <a class="nav-link me-2" aria-current="page"
+                                href="/controllers/addUser_controller.php">Inscription</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link me-2" aria-current="page" href="/homeRecipes.php">Recettes pour la maison</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link me-2" aria-current="page" href="/controllers/addUser_controller.php">Inscription</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="/contrllers/connectUser_controller.php">Connexion</a>
+                            <a class="nav-link" aria-current="page"
+                                href="/contrllers/connectUser_controller.php">Connexion</a>
                         </li>
                     </ul>
                 </div>
