@@ -30,8 +30,8 @@
                                 Nos produits
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                                <li><a class="nav-link me-2" aria-current="page" href="/bodyRecipes.php">Pour le corps</a></li>
-                                <li><a class="nav-link me-2" aria-current="page" href="/homeRecipes.php">Pour la maison</a></li>
+                                <li><a class="nav-link me-2" aria-current="page" href="/products.php">Pour le corps</a></li>
+                                <li><a class="nav-link me-2" aria-current="page" href="/products.php">Pour la maison</a></li>
                                 
                             </ul>
                         </li>
@@ -41,8 +41,8 @@
                                 Nos recettes
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                                <li><a class="nav-link me-2" aria-current="page" href="/bodyRecipes.php">Pour le corps</a></li>
-                                <li><a class="nav-link me-2" aria-current="page" href="/homeRecipes.php">Pour la maison</a></li>
+                                <li><a class="nav-link me-2" aria-current="page" href="/recipes.php">Pour le corps</a></li>
+                                <li><a class="nav-link me-2" aria-current="page" href="/recipes.php">Pour la maison</a></li>
                                 
                             </ul>
                         </li>

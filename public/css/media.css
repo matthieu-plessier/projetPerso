@@ -1,6 +1,7 @@
 :root {
     font: 10px;
 }
+
 @media (min-width: 768px) {
     :root {
         font-size: 20px;
