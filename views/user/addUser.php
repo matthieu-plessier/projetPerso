@@ -1,8 +1,3 @@
-<?php
-
-    include(dirname(__FILE__).'/../templates/header.php');
-
-?>
 
 <form action="<?=htmlspecialchars($_SERVER['PHP_SELF'])?>" method="post" id="formUser">
 
@@ -59,7 +54,7 @@
                         minlength="2"
                         maxlength="70"
                         required
-                        pattern="<?=REGEXP_STR_NO_NUMBER?>"
+                        pattern="<?=REGEX_STR_NO_NUMBER?>"
                     >
                     <div class="error"><?=$error['lastname'] ?? ''?></div>
                 </div>
@@ -77,7 +72,7 @@
                         autocomplete="given-name"
                         minlength="2"
                         maxlength="70"
-                        pattern="<?=REGEXP_STR_NO_NUMBER?>"
+                        pattern="<?=REGEX_STR_NO_NUMBER?>"
                         id="firstname">
                 </div>
 
@@ -92,7 +87,7 @@
                         class="form-control  <?=isset($error['email']) ? 'errorField' : ''?>" 
                         id="email" 
                         autocomplete="email"
-                        pattern="<?=REGEXP_EMAIL?>"
+                        pattern="<?=REGEX_EMAIL?>"
                         placeholder="name@example.com">
                 <div class="error"><?=$error['email'] ?? ''?></div>
                 </div>
@@ -108,7 +103,7 @@
                         value="<?=htmlentities($nickname ?? '') ?>"
                         autocomplete="nickname"
                         placeholder="Votre pseudo"
-                        pattern="<?=REGEXP_PSEUDO?>"
+                        pattern="<?=REGEX_PSEUDO?>"
                         id="nickname">
                 <div class="error"><?=$error['nickname'] ?? ''?></div>
                 </div>
@@ -122,12 +117,12 @@
                         name="password"
                         class="form-control <?=isset($error['password']) ? 'errorField' : ''?>" 
                         value="<?=htmlentities($password ?? '') ?>"
-                        pattern="<?=REGEXP_PASSWORD?>"
+                        pattern="<?=REGEX_PASSWORD?>"
                         autocomplete="new-password"
                         id="password">
                 </div>
 
-            <!-- CONFIRMATION DE PASSE -->
+            <!-- CONFIRMATION DE MOT PASSE -->
 
                 <div class="mb-3">
                     <label for="confirmPassword " class="form-label">Confirmation de votre mot de passe* :</label>
@@ -136,7 +131,7 @@
                     name="confirmPassword"
                     value="<?=htmlentities($password ?? '') ?>"
                     class="form-control <?=isset($error['password']) ? 'errorField' : ''?>" 
-                    pattern="<?=REGEXP_PASSWORD?>"
+                    pattern="<?=REGEX_PASSWORD?>"
                     id="confirmPassword">
                 </div>
                 
@@ -145,9 +140,3 @@
         </div>
     </div>
 
-    
-    <?php
-
-include(dirname(__FILE__).'/../templates/footer.php');
-
-?>

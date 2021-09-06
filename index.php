@@ -8,10 +8,9 @@
 <div class="main">
     <div class="card text-center ms-md-5" style="width: 18rem;">
         <div class="card-body d-flex flex-column justify-content-center">
-            <h5 class="card-title">Pour mettre en vente vos produits c'est ici !</h5>
+            <h5 class="card-title">Pour proposer vos produits c'est ici !</h5>
 
-            <a href="#" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Commencer à
-                vendre</a>
+            <a href="#" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Proposer</a>
             <a href="#" class="btn btn-outline-success mt-2">Comment ca marche</a>
 
         </div>
@@ -24,7 +23,7 @@
     <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Proposez votre produit</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Proposer votre produit</h5>
 
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>

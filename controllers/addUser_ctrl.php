@@ -8,7 +8,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $lastname = trim(filter_input(INPUT_POST, 'lastname', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES));
     // On vérifie que ce n'est pas vide
     if(!empty($lastname)){
-        $testRegex = preg_match('/'.REGEXP_STR_NO_NUMBER.'/',$lastname);
+        $testRegex = preg_match('/'.REGEX_STR_NO_NUMBER.'/',$lastname);
         // Avec une regex (constante déclarée plus haut), on vérifie si c'est le format attendu 
         if(!$testRegex){
             $error["lastname"] = "Le nom n'est pas au bon format"; 
@@ -26,7 +26,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $firstname = trim(filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES));
 
     if(!empty($firstname)){
-        $testRegex = preg_match('/'.REGEXP_STR_NO_NUMBER.'/',$firstname);
+        $testRegex = preg_match('/'.REGEX_STR_NO_NUMBER.'/',$firstname);
         if(!$testRegex){
             $error["firstname"] = "Le prénom n'est pas au bon format!!"; 
         } else {
@@ -51,7 +51,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $nickname = trim(filter_input(INPUT_POST, 'nickname', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES));
 
     if(!empty($nickname)){
-        $testRegex = preg_match('/'.REGEXP_PSEUDO.'/',$nickname);
+        $testRegex = preg_match('/'.REGEX_PSEUDO.'/',$nickname);
         if(!$testRegex){
             $error["nickname"] = "Le pseudo n'est pas au bon format!!"; 
         } else {
@@ -63,7 +63,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 // Password : validation
     
     if (!empty($password)) {
-        $testRegex = preg_match('/'.REGEXP_PASSWORD.'/',$password);
+        $testRegex = preg_match('/'.REGEX_PASSWORD.'/',$password);
         
     }
 
@@ -76,4 +76,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 }
 
-include(dirname(__FILE__).'/../views/user/register.php');
+include(dirname(__FILE__).'/../views/templates/header.php');
+
+include(dirname(__FILE__).'/../views/user/addUser.php');
+
+include(dirname(__FILE__).'/../views/templates/footer.php');

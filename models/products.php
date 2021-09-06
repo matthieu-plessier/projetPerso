@@ -16,15 +16,18 @@
     
     // Méthode magique pour hydrater
 
-    public function __construct($id = "", $type_of_product = "", $product = "", $_image = "", $quantity = "", $comment = "", $_d_user = "", $id_type_of_product = "")
+    public function __construct($id = "", $type_of_product = "", $product = "", $image = "", $quantity = "", $comment = "", $id_user = "", $id_type_of_product = "")
     {
         {
             $this->_id=$id; 
-            $this->_ingredient=$ingredient;
-            $this->_quantity=$quantity;
-            $this->_process_comment=$process_comment;
-            $this->_image=$image;
             $this->_type_of_product=$type_of_product;
+            $this->_product=$product;
+            $this->_image=$image;
+            $this->_quantity=$quantity;
+            $this->_comment=$comment;
+            $this->_id_user=$id_user;
+            $this->_id_type_of_product=$id_type_of_product;
+
             $this->db = Database::getInstance();
             }
     }

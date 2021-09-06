@@ -23,6 +23,7 @@
             $this->_process_comment=$process_comment;
             $this->_image=$image;
             $this->_type_of_product=$type_of_product;
+            
             $this->db = Database::getInstance();
             }
     }

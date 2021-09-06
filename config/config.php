@@ -2,8 +2,9 @@
 
 
 $messageCode = [
+
     001=> ['type' => 'alert-danger', 'msg' => 'Une erreur SQL est survenue'],
-    002 => ['type' => 'alert-danger', 'msg' => 'Le patient existe déjà'],
+    002 => ['type' => 'alert-danger', 'msg' => 'Le pseudo existe déjà'],
     003 => ['type' => 'alert-success', 'msg' => 'Modifications validées !'],
     004 => ['type' => 'alert-danger', 'msg' => 'L\'id n\'est pas au bon format!!'],
     005 => ['type' => 'alert-success', 'msg' => 'L\'ajout est validé'],
@@ -13,7 +14,7 @@ $messageCode = [
     012 => ['type' => 'alert-success', 'msg' => 'Le rendez-vous est enregistré'],
     013 => ['type' => 'alert-success', 'msg' => 'La date n\'est pas au bon format'],
     014 => ['type' => 'alert-success', 'msg' => 'Le rdv est bien supprimé !'],
-    015 => ['type' => 'alert-success', 'msg' => 'Le patient est bien supprimé !'],
+    015 => ['type' => 'alert-success', 'msg' => 'Le user est bien supprimé !'],
     016 => ['type' => 'alert-danger', 'msg' => 'Aucune correspondances trouvées'],
 
 ];

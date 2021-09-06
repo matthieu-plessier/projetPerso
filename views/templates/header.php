@@ -30,8 +30,8 @@
                                 Nos produits
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                                <li><a class="nav-link me-2" aria-current="page" href="/products.php">Pour le corps</a></li>
-                                <li><a class="nav-link me-2" aria-current="page" href="/products.php">Pour la maison</a></li>
+                                <li><a class="nav-link me-2" aria-current="page" href="/controllers/products_ctrl.php">Pour le corps</a></li>
+                                <li><a class="nav-link me-2" aria-current="page" href="/controllers/products_ctrl.php">Pour la maison</a></li>
                                 
                             </ul>
                         </li>
@@ -41,21 +41,65 @@
                                 Nos recettes
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                                <li><a class="nav-link me-2" aria-current="page" href="/recipes.php">Pour le corps</a></li>
-                                <li><a class="nav-link me-2" aria-current="page" href="/recipes.php">Pour la maison</a></li>
+                                <li><a class="nav-link me-2" aria-current="page" href="/controllers/recipes_ctrl.php">Pour le corps</a></li>
+                                <li><a class="nav-link me-2" aria-current="page" href="/controllers/recipes_ctrl.php">Pour la maison</a></li>
                                 
                             </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link me-2" aria-current="page"
-                                href="/controllers/addUser_controller.php">Inscription</a>
+                                href="/controllers/addUser_ctrl.php">Inscription</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page"
-                                href="/contrllers/connectUser_controller.php">Connexion</a>
+                            <a class="nav-link" aria-current="page" data-bs-toggle="modal" data-bs-target="#connectUser"
+                                href="/controllers/connectUser_ctrl.php">Connexion</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
+        <div class="modal fade" id="connectUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Connexion</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="" alt="" width="50">
+                <div class="mb-3">
+                    <label for="nickname" class="form-label">Votre pseudo :</label>
+                    <input 
+                        type="text" 
+                        name="nickname"
+                        class="form-control <?=isset($error['nickname']) ? 'errorField' : ''?>" 
+                        value="<?=htmlentities($nickname ?? '') ?>"
+                        autocomplete="nickname"
+                        placeholder="Votre pseudo"
+                        pattern="<?=REGEX_PSEUDO?>"
+                        id="nickname">
+                <div class="error"><?=$error['nickname'] ?? ''?></div>
+                </div>
+                
+            <!-- MOT DE PASSE -->
+
+                <div class="mb-3">
+                    <label for="password " class="form-label">Votre mot de passe :</label>
+                    <input 
+                        type="password" 
+                        name="password"
+                        class="form-control <?=isset($error['password']) ? 'errorField' : ''?>" 
+                        value="<?=htmlentities($password ?? '') ?>"
+                        pattern="<?=REGEX_PASSWORD?>"
+                        autocomplete="new-password"
+                        id="password">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Valider</button>
+            </div>
+        </div>
+    </div>
+</div>
+
     </header>
