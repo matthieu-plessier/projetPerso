@@ -3,6 +3,7 @@
 
     <h1>Dites nous qui vous êtes :</h1>
     <div class="registration">
+        
         <div class="textRegistration">
             <h2>Pourquoi s'inscrire ?</h2><br>
             <p><br>
@@ -23,21 +24,7 @@
             <h2>Lancez-vous !</h2>
             <form>
 
-            <!-- CIVILITE -->
-
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                    Monsieur
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
-                    Madame
-                    </label>
-                </div>
-
+            
             <!-- NOM -->
 
                 <div class="mb-3">
@@ -114,12 +101,12 @@
                     <label for="password " class="form-label">Votre mot de passe * :</label>
                     <input 
                         type="password" 
-                        name="password"
+                        name="password1"
                         class="form-control <?=isset($error['password']) ? 'errorField' : ''?>" 
                         value="<?=htmlentities($password ?? '') ?>"
                         pattern="<?=REGEX_PASSWORD?>"
-                        autocomplete="new-password"
-                        id="password">
+                        autocomplete="password"
+                        id="password1">
                 </div>
 
             <!-- CONFIRMATION DE MOT PASSE -->
@@ -128,15 +115,15 @@
                     <label for="confirmPassword " class="form-label">Confirmation de votre mot de passe* :</label>
                     <input 
                     type="password" 
-                    name="confirmPassword"
+                    name="password2"
                     value="<?=htmlentities($password ?? '') ?>"
                     class="form-control <?=isset($error['password']) ? 'errorField' : ''?>" 
                     pattern="<?=REGEX_PASSWORD?>"
-                    id="confirmPassword">
+                    id="password2">
                 </div>
                 
                 <button type="submit" class="btn btn-success">Envoyé</button>
             </form>
         </div>
     </div>
-
+<script src="../../public/js/checkPass.js"></script>

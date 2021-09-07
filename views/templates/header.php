@@ -68,17 +68,17 @@
             <div class="modal-body">
                 <img src="" alt="" width="50">
                 <div class="mb-3">
-                    <label for="nickname" class="form-label">Votre pseudo :</label>
+                    <label for="mail" class="form-label">Votre mail :</label>
                     <input 
                         type="text" 
-                        name="nickname"
-                        class="form-control <?=isset($error['nickname']) ? 'errorField' : ''?>" 
-                        value="<?=htmlentities($nickname ?? '') ?>"
-                        autocomplete="nickname"
-                        placeholder="Votre pseudo"
-                        pattern="<?=REGEX_PSEUDO?>"
-                        id="nickname">
-                <div class="error"><?=$error['nickname'] ?? ''?></div>
+                        name="mail"
+                        class="form-control <?=isset($error['mail']) ? 'errorField' : ''?>" 
+                        value="<?=htmlentities($mail ?? '') ?>"
+                        autocomplete="mail"
+                        placeholder="ex : johndoe@exemple.com"
+                        pattern="<?=REGEX_EMAIL?>"
+                        id="mail">
+                <div class="error"><?=$error['mail'] ?? ''?></div>
                 </div>
                 
             <!-- MOT DE PASSE -->
@@ -91,11 +91,13 @@
                         class="form-control <?=isset($error['password']) ? 'errorField' : ''?>" 
                         value="<?=htmlentities($password ?? '') ?>"
                         pattern="<?=REGEX_PASSWORD?>"
+                        placeholder="ex : 123abc456"
                         autocomplete="new-password"
                         id="password">
                 </div>
             </div>
             <div class="modal-footer">
+                <p><a href="">J'ai oublié mon mot de passe.</a></p>
                 <button type="button" class="btn btn-primary">Valider</button>
             </div>
         </div>
