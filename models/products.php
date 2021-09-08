@@ -31,5 +31,23 @@
             $this->db = Database::getInstance();
             }
     }
-    
+    public static function findAll(){
+        // requête sql
+        $sql = "SELECT * FROM `product_to_exchange`";
+        
+        
+        
+        // récupérer les données dans un tableau PHP
+        try {
+            $sth =  Database::getInstance()->query($sql);
+            if ($sth == true){
+                $result = $sth->fetchAll();
+                return $result;
+            }
+            
+        } catch (PDOException $ex) {
+            return $ex;
+        }
+    }
+        
     }

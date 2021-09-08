@@ -5,10 +5,10 @@
     <div class="registration">
         
         <div class="textRegistration">
-            <h2>Pourquoi s'inscrire ?</h2><br>
+            <h2>Pourquoi s'inscrire ?</h2>
             <p><br>
                 Vous souhaitez :
-                <ul><br>
+                <ul>
                     <li>Consommer responsable ?</li>
                     <li>Echanger des produits "fait maison" ?</li>
                     <li>Rencontrer des personnes aux mêmes centres d'intérêts ?</li>
@@ -79,21 +79,6 @@
                 <div class="error"><?=$error['email'] ?? ''?></div>
                 </div>
 
-            <!-- PSEUDO -->
-
-                <div class="mb-3">
-                    <label for="nickname" class="form-label">Votre pseudo* :</label>
-                    <input 
-                        type="text" 
-                        name="nickname"
-                        class="form-control <?=isset($error['nickname']) ? 'errorField' : ''?>" 
-                        value="<?=htmlentities($nickname ?? '') ?>"
-                        autocomplete="nickname"
-                        placeholder="Votre pseudo"
-                        pattern="<?=REGEX_PSEUDO?>"
-                        id="nickname">
-                <div class="error"><?=$error['nickname'] ?? ''?></div>
-                </div>
                 
             <!-- MOT DE PASSE -->
 
@@ -104,7 +89,6 @@
                         name="password1"
                         class="form-control <?=isset($error['password']) ? 'errorField' : ''?>" 
                         value="<?=htmlentities($password ?? '') ?>"
-                        pattern="<?=REGEX_PASSWORD?>"
                         autocomplete="password"
                         id="password1">
                 </div>
@@ -118,7 +102,6 @@
                     name="password2"
                     value="<?=htmlentities($password ?? '') ?>"
                     class="form-control <?=isset($error['password']) ? 'errorField' : ''?>" 
-                    pattern="<?=REGEX_PASSWORD?>"
                     id="password2">
                 </div>
                 
@@ -126,4 +109,4 @@
             </form>
         </div>
     </div>
-<script src="../../public/js/checkPass.js"></script>
+<script src="/public/js/checkPass.js"></script>

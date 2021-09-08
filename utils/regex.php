@@ -26,7 +26,7 @@ define('REGEX_NUMBER_BADGE', "^[0-9]{0,2}|[1]?[0-9]{2}$");
 // SIRET
 define('REGEX_SIRET', "^[0-9]{14}$");
 
-// PassWord
+// PassWord non fonctionel
 define('REGEX_PASSWORD', "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$");
 
 // Envoyer image

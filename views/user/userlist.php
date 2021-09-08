@@ -13,9 +13,7 @@
             <th scope="col">ID</th>
             <th scope="col">Nom</th>
             <th scope="col">Prénom</th>
-            <th scope="col">Pseudo</th>
             <th scope="col">Email</th>
-            <th scope="col">Date de naissance</th>
             <th scope="col">Mot de passe</th>
             <th scope="col">Status</th>
             <th scope="col">Voir Profil</th>
@@ -29,9 +27,7 @@
                 <td scope="row"><?=$user->id ?? '' ?></td>
                 <td><?=$user->lastname ?? '' ?></td>
                 <td><?=$user->firstname ?? '' ?></td>
-                <td><?=$user->nickname ?? '' ?></td>
                 <td><a href="mailto:<?=$user->mail ?? '' ?>"><?=$user->mail ?? '' ?></a></td>
-                <td><?=$user->birthdate ?? '' ?></td>
                 <td><?=$user->password ?? '' ?></td>
                 <td><?=$user->status ?? '' ?></td>
 
@@ -43,6 +39,4 @@
             <?php endforeach; ?>
         </tbody>
     </table>
-
-    <?=$messerror ? $messerror['msg'].' pour '.$lastname : null; ?>
 </div>

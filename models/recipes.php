@@ -2,7 +2,7 @@
     require_once(dirname(__FILE__).'/../config/config.php');
     require_once(dirname(__FILE__).'/../utils/dbConnect.php');
 
-    class Recip {
+    class Recipe {
         
         private $_id;
         private $_ingredient;
@@ -27,5 +27,23 @@
             $this->db = Database::getInstance();
             }
     }
-    
+    public static function findAll(){
+        // requête sql
+        $sql = "SELECT * FROM `recipe`";
+        
+        
+        
+        // récupérer les données dans un tableau PHP
+        try {
+            $sth =  Database::getInstance()->query($sql);
+            if ($sth == true){
+                $result = $sth->fetchAll();
+                return $result;
+            }
+            
+        } catch (PDOException $ex) {
+            return $ex;
+        }
+    }
+        
     }
