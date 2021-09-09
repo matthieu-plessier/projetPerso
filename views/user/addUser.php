@@ -1,7 +1,13 @@
 
 <form action="<?=htmlspecialchars($_SERVER['PHP_SELF'])?>" method="post" id="formUser">
 
-    <h1>Dites nous qui vous êtes :</h1>
+    <h1 class="text-white">Dites nous qui vous êtes :</h1>
+    
+    <?php 
+        if($code){
+            echo '<div class="text-center m-0 alert'.' '.$messageCode[$code]['type'].' "><img src="https://img.icons8.com/ios-glyphs/32/000000/right.png"/>'.$messageCode[$code]['msg'].' <img src="https://img.icons8.com/ios-glyphs/32/000000/left.png"/></div>';
+        }
+    ?>
     <div class="registration">
         
         <div class="textRegistration">
@@ -35,7 +41,7 @@
                         id="lastname" 
                         title="Veuillez entrer un nom sans chiffres"
                         placeholder="Entrez votre nom"
-                        class="form-control <?=isset($error['lastname']) ? 'errorField' : ''?>"
+                        class="form-control <?=isset($errorsArray['lastname']) ? 'errorField' : ''?>"
                         autocomplete="family-name"
                         value="<?=htmlentities($lastname ?? '') ?>"
                         minlength="2"
@@ -43,7 +49,7 @@
                         required
                         pattern="<?=REGEX_STR_NO_NUMBER?>"
                     >
-                    <div class="error"><?=$error['lastname'] ?? ''?></div>
+                    <div class="error alert-danger text-center"><?=$errorsArray['lastname'] ?? ''?></div>
                 </div>
                 
             <!-- PRENOM -->
@@ -61,6 +67,7 @@
                         maxlength="70"
                         pattern="<?=REGEX_STR_NO_NUMBER?>"
                         id="firstname">
+                        <div class="error alert-danger text-center"><?=$errorsArray['firstname'] ?? ''?></div>
                 </div>
 
             <!-- MAIL -->
@@ -75,8 +82,10 @@
                         id="email" 
                         autocomplete="email"
                         pattern="<?=REGEX_EMAIL?>"
-                        placeholder="name@example.com">
-                <div class="error"><?=$error['email'] ?? ''?></div>
+                        placeholder="name@example.com"
+                        required
+                        >
+                        <div class="error alert-danger text-center"><?=$errorsArray['email'] ?? ''?></div>
                 </div>
 
                 
@@ -87,10 +96,11 @@
                     <input 
                         type="password" 
                         name="password1"
-                        class="form-control <?=isset($error['password']) ? 'errorField' : ''?>" 
-                        value="<?=htmlentities($password ?? '') ?>"
+                        class="form-control <?=isset($error['password1']) ? 'errorField' : ''?>" 
                         autocomplete="password"
-                        id="password1">
+                        id="password1"
+                        required>
+                        <div class="error alert-danger text-center"><?=$errorsArray['password1'] ?? ''?></div>
                 </div>
 
             <!-- CONFIRMATION DE MOT PASSE -->
@@ -100,13 +110,15 @@
                     <input 
                     type="password" 
                     name="password2"
-                    value="<?=htmlentities($password ?? '') ?>"
                     class="form-control <?=isset($error['password']) ? 'errorField' : ''?>" 
-                    id="password2">
+                    id="password2"
+                    required>
+                    <div class="error alert-danger text-center"><?=$errorsArray['password2'] ?? ''?></div>
                 </div>
                 
-                <button type="submit" class="btn btn-success">Envoyé</button>
+                <button type="submit" class="btn btn-success" style="background-color: #236d5e;">Envoyé</button>
             </form>
         </div>
     </div>
+
 <script src="/public/js/checkPass.js"></script>

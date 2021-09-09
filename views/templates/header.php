@@ -1,3 +1,6 @@
+<?php
+    include(dirname(__FILE__).'/header.php');
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -46,14 +49,33 @@
                                 
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link me-2" aria-current="page"
-                                href="/controllers/addUser_ctrl.php">Inscription</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" data-bs-toggle="modal" data-bs-target="#connectUser"
-                                href="/controllers/connectUser_ctrl.php">Connexion</a>
-                        </li>
+                        <?php
+                            if(empty($_SESSION['user'])){
+                        ?>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Connexion/Inscription
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                    <li><a class="nav-link me-2" aria-current="page" data-bs-toggle="modal" href="#" data-bs-target="#connectUser">Connexion</a></li>
+                                    <li><a class="nav-link me-2" aria-current="page" href="/controllers/addUser_ctrl.php">Inscription</a></li>
+                                    
+                                </ul>
+                            </li>
+                        <?php } else { ?>
+                            <li class="nav-item dropdown ms-3 fw-bold">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <?=$_SESSION['user']->firstname?> <?=$_SESSION['user']->lastname?>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                    <li><a class="nav-link me-2" aria-current="page" href="#">Profil</a></li>
+                                    <li><a class="nav-link me-2" aria-current="page" href="/controllers/deconnectUser_ctrl.php">Déconnexion</a></li>
+                                    
+                                </ul>
+                            </li>
+                        <?php } ?>
                     </ul>
                 </div>
             </div>

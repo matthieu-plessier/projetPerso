@@ -10,8 +10,8 @@
         <div class="card-body d-flex flex-column justify-content-center">
             <h5 class="card-title">Pour proposer vos produits c'est ici !</h5>
 
-            <a href="#" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Proposer</a>
-            <a href="#" class="btn btn-outline-success mt-2">Comment ca marche</a>
+            <a href="#" class="btn btnPropose " data-bs-toggle="modal" data-bs-target="#exampleModal">Proposer</a>
+            <a href="#" class="btn btnPropose2 mt-2">Comment ca marche</a>
 
         </div>
     </div>

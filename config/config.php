@@ -7,7 +7,7 @@ $messageCode = [
     002 => ['type' => 'alert-danger', 'msg' => 'Le pseudo existe déjà'],
     003 => ['type' => 'alert-success', 'msg' => 'Modifications validées !'],
     004 => ['type' => 'alert-danger', 'msg' => 'L\'id n\'est pas au bon format!!'],
-    005 => ['type' => 'alert-success', 'msg' => 'L\'ajout est validé'],
+    005 => ['type' => 'alert-success', 'msg' => 'Pour valider votre inscription, vérifiez vos mails !'],
     006 => ['type' => 'alert-danger', 'msg' => 'l\'id doit être renseigné!!' ],
     010 => ['type' => 'alert-danger', 'msg' => 'Cet utilisateur n\'existe pas'],
     011 => ['type' => 'alert-danger', 'msg' => 'La date entrée n\'est pas valide'],

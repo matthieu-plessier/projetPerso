@@ -6,6 +6,7 @@ include(dirname(__FILE__).'/../models/users.php');
 
 // Initialisation du tableau d'erreurs
 $errorsArray = array();
+$code = null;
 /*************************************/
 
 //On ne controle que s'il y a des données envoyées
@@ -44,7 +45,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $errorsArray["firstname"] = "La longueur de chaine n'est pas bonne";
             }
         }
+    }else { // Pour les champs obligatoires, on retourne une erreur
+        $errorsArray["firstname"] = "Vous devez entrer un prénom";
     }
+
 // email : Nettoyage et validation
 
     $email = trim(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL));
@@ -63,26 +67,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 $password1 = $_POST['password1'];
 $password2 = $_POST['password2'];
 
+if (empty($password1)) {
+    $errorsArray['password1'] = 'Le mot de passe est obligatoire';
+}
+if (empty($password2)) {
+    $errorsArray['password2'] = 'Le mot de passe est obligatoire';
+}
 if($password1!=$password2){
     $errorsArray['password'] = 'Les mots de passe sont différents';
 } else {
     $password = password_hash($password1, PASSWORD_DEFAULT);
-
 }
 
 // Si aucune erreur, on enregistre en BDD
 if(empty($errorsArray)){
-    $user = new User($lastname, $email, $password, $firstname);
-    $user->create();
+    $user = new User('', $lastname, $firstname, $email, $password, 0);
+    $code = $user->create();
 
 }
-
-
-
-
-
-
-
 
 }
 

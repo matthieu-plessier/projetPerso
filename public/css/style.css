@@ -6,9 +6,13 @@ body {
     font-size: initial;
 }
 h1 {
+
     text-align: center;
-    margin-bottom: 15px;
-    font-size: 50px;
+    margin-bottom: 0px;
+    font-size: 45px;
+    background-color: #236d5e;
+    padding : 10px 0;
+    
 }
 h2 {
     text-align: center;
@@ -16,6 +20,26 @@ h2 {
 }
 h5 {
     color: #236d5e;
+}
+.btnPropose{
+    background-color: #236d5e !important;
+    border: 1px solid #236d5e;
+    color : white;
+}
+
+.btnPropose:hover{
+    background-color: white !important;
+    color:#236d5e;
+}
+.btnPropose2{
+    background-color: white !important;
+    border: 1px solid #236d5e;
+    color:#236d5e;
+}
+
+.btnPropose2:hover{
+    background-color: #236d5e !important;
+    color:white;
 }
 .navbar {
     padding: 0%;
@@ -33,8 +57,11 @@ h5 {
     color: #236d5e;
     font-size: large;
 }
-.navbar-light .navbar-nav .nav-link{
+.nav-item{
     color: #236d5e;
+}
+.navbar-light .navbar-nav .nav-link{
+    color: #236d5e !important;
 }
 
 .navbar-toggler {
@@ -73,7 +100,8 @@ footer {
     background-color: #236d5e;
 }
 .registration {
-    background-image: url(/public/img/Pourlecorps/bougiesetsel.jpg);
+    
+    background-image: url(/public/img/Pourlecorps/savonethuile2.jpg);
     background-size: cover;
     background-position: 50%;
     display: flex;
@@ -108,4 +136,31 @@ footer {
 }
 #recipesCard{
     height: fit-content;
+}
+.congratulation{
+    height: 100vh;
+    background-image: url(/public/img/Pourlecorps/liniment.jpg);
+    background-size: cover;
+    background-position: 50%;
+    background-color: rgba(255,255,255, 0.3);
+    width: 50%;
+    width: 50%;
+    padding: 10px;
+    border: 2px solid grey;
+    border-radius: 20px;
+    margin: 15px;
+    font-size: x-large;
+}
+.textCongratulation{
+    height: 100vh;
+    background-size: cover;
+    background-position: 50%;
+    background-color: rgba(255,255,255, 0.3);
+    width: 50%;
+    width: 50%;
+    padding: 10px;
+    border: 2px solid grey;
+    border-radius: 20px;
+    margin: 15px;
+    font-size: x-large;
 }
