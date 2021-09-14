@@ -1,4 +1,4 @@
-<h1>Nos recettes Beauté</h1>
+<h1 class="text-white">Nos recettes Beauté</h1>
 <div class="bodyRecipes">
     <div class="row row-cols-1 row-cols-md-3 g-4 m-0" id="recipesPage">
         <div class="col" id="recipesCard">

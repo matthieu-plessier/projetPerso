@@ -1,28 +1,19 @@
 <?php
+session_start();
 
-include(dirname(__FILE__).'/../utils/regex.php');
+include dirname(__FILE__).'/../models/users.php';
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+$email = trim(filter_input(INPUT_POST, 'mail', FILTER_SANITIZE_EMAIL));
+$passwordPost = isset($_POST['password']) ? $_POST['password'] : '';
 
-// mail : validation
-// Password : validation
+$user = User::getByEmail($email);
 
-if (!empty($password)) {
-    $testRegex = preg_match('/'.REGEX_PASSWORD.'/',$password);
+if($user){
+    $isPasswordOk = password_verify($passwordPost, $user->password);
+    if($isPasswordOk){
+        //On connecte le user
+        $_SESSION['user'] = $user;
+        header('location: /index.php');
     
+    }
 }
-
-
-
-
-
-
-
-
-}
-
-include(dirname(__FILE__).'/../views/templates/header.php');
-
-include(dirname(__FILE__).'/../views/connectUser.php');
-
-include(dirname(__FILE__).'/../views/templates/footer.php');

@@ -17,7 +17,7 @@
         private $_pdo;
         
 
-        // méthode magique pour "hydrater"
+        ////////////////////////////////////////////////// méthode magique pour "hydrater"
 
         public function __construct($id = "", $lastname = "", $firstname = "",$mail = "", $password = "", $status = "")
 
@@ -30,6 +30,23 @@
         $this->_status=$status;
 
         $this->_pdo = Database::getInstance();
+        }
+        ///////////////////////////////////////////////////// verifie que le mail existe 
+        public static function checkDuplicate($email){
+            $checkMailSql ="SELECT `email`
+                            FROM `user` 
+                            WHERE `email`= :email;";
+            
+
+            $stmtCheckMailReq = Database::getInstance()->prepare($checkMailSql);
+            
+            $stmtCheckMailReq->bindValue(':mail',$email,PDO::PARAM_STR);
+            try {
+                $stmtCheckMailReq->execute();
+                return $stmtCheckMailReq->fetchColumn();
+            } catch (PDOException $ex) {
+                return false;
+            }
         }
         public static function findAll(){
             // requête sql
@@ -135,6 +152,77 @@
         }
         catch(PDOException $e){
             return $e;
+        }
+    }
+    //////////////////////////////////////////////////// CONNECTION /////////////////////////////////////////
+    public static function getByEmail($email){
+
+        $pdo = Database::getInstance();
+
+        try{
+            $sql = 'SELECT * FROM `user` 
+                    WHERE `mail` = :mail AND confirmed_at IS NOT NULL';
+
+            $sth = $pdo->prepare($sql);
+
+            $sth->bindValue(':mail',$email);
+
+            if($sth->execute()){
+                return($sth->fetch());
+            }
+            
+        }
+        catch(PDOException $e){
+            return $e;
+        }
+
+    }
+    ///////////////////////////////////////////////////// PROFIL USER /////////////////////////////////////////
+    
+    public static function checkUser($id)
+    {
+        $sql = "SELECT * FROM `user` WHERE `id` = :id;";
+        $req =  Database::getInstance()->prepare($sql);
+        $req->bindValue(':id', $id, PDO::PARAM_INT);
+        $req->execute();
+    
+        try {
+            
+            if($req) {
+                // on return les données récupérées
+                
+                return $req->fetch(PDO::FETCH_OBJ);//existe
+            }
+        } catch (PDOException $ex) {
+            return 10; // erreur
+        }
+
+    }
+    ////////////////////////////////////////////////////// MODIF PROFIL ///////////////////////////////////////////
+
+    public function upDate($id)
+    {
+        $sql ="UPDATE  `user` 
+                SET `lastname`= :lastname, `firstname`= :firstname, `mail`= :email, `password1`= :password1, `password2`= :password2
+                WHERE `id` = :id;";
+
+                $req = $this->db->prepare($sql);
+
+                $req->bindValue(':lastname', $this->_lastname, PDO::PARAM_STR);
+                $req->bindValue(':firstname', $this->_firstname, PDO::PARAM_STR);               
+                $req->bindValue(':email', $this->_email, PDO::PARAM_STR);
+                $req->bindValue(':password1', $this->_password1, PDO::PARAM_STR);
+                $req->bindValue(':password2', $this->_password2, PDO::PARAM_STR);
+
+                $req->bindValue(':id', $id, PDO::PARAM_STR);
+
+
+        try {
+            if ($req->execute())
+            // retourne les données récup
+            return 3;
+        } catch (PDOException $ex) {
+            return false;
         }
     }
     }

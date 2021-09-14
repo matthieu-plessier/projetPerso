@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once(dirname(__FILE__).'/../models/products.php');
 
 
