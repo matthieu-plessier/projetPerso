@@ -46,13 +46,15 @@ if(!empty($_SESSION)){
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                Nos recettes
+                                Les recettes
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                                 <li><a class="nav-link me-2" aria-current="page"
                                         href="/controllers/recipes_ctrl.php">Pour le corps</a></li>
                                 <li><a class="nav-link me-2" aria-current="page"
                                         href="/controllers/recipes_ctrl.php">Pour la maison</a></li>
+                                <li><a class="nav-link me-2" aria-current="page"
+                                        href="/controllers/addRecipe_ctrl.php">Proposer une recette</a></li>
 
                             </ul>
                         </li>

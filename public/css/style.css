@@ -18,7 +18,7 @@ h2 {
     text-align: center;
     font-size: 35px;
 }
-h5 {
+h5,h3{
     color: #236d5e;
 }
 .btnPropose{
@@ -152,6 +152,60 @@ footer {
     font-size: x-large;
 }
 .textCongratulation{
+    height: 100vh;
+    background-size: cover;
+    background-position: 50%;
+    background-color: rgba(255,255,255, 0.3);
+    width: 50%;
+    width: 50%;
+    padding: 10px;
+    border: 2px solid grey;
+    border-radius: 20px;
+    margin: 15px;
+    font-size: x-large;
+}
+.howItWorkImg{
+    height: 100vh;
+    background-image: url(/public/img/Pourlecorps/savonethuile2.jpg);
+    background-size: cover;
+    background-position: 50%;
+    background-color: rgba(255,255,255, 0.3);
+    width: 50%;
+    width: 50%;
+    padding: 10px;
+    border: 2px solid grey;
+    border-radius: 20px;
+    margin: 15px;
+    font-size: x-large;
+}
+.howItWorkText{
+    height: 100vh;
+    background-size: cover;
+    background-position: 50%;
+    background-color: rgba(255,255,255, 0.3);
+    width: 50%;
+    width: 50%;
+    padding: 10px;
+    border: 2px solid grey;
+    border-radius: 20px;
+    margin: 15px;
+    font-size: x-large;
+}
+.addRecipImg{
+    height: 100vh;
+    background-image: url(/public/img/Pourlecorps/photo-of-thoughtful-man-holds-chin-looks-pensively-upwards-wears-white-jumper-and-gloves-uses-washing-up-liquid-cleanser-isolated-over-pink-space.png);
+    background-size: cover;
+    background-position: 50%;
+    background-color: rgba(255,255,255, 0.3);
+    width: 50%;
+    width: 50%;
+    padding: 10px;
+    border: 2px solid grey;
+    border-radius: 20px;
+    margin: 15px;
+    font-size: x-large;
+}
+.addRecipText{
     height: 100vh;
     background-size: cover;
     background-position: 50%;

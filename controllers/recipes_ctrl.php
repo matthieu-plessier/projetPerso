@@ -2,11 +2,11 @@
 
 session_start();
 require_once(dirname(__FILE__).'/../models/recipes.php');
+require_once(dirname(__FILE__).'/../models/ingredients.php');
 
 
 
-
-
+$recipes = Recipe::findAll();
 
 include(dirname(__FILE__).'/../views/templates/header.php');
 

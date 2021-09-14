@@ -2,7 +2,7 @@
     require_once(dirname(__FILE__).'/../config/config.php');
     require_once(dirname(__FILE__).'/../utils/dbConnect.php');
 
-    class Recipe {
+class Recipe {
         
         private $_id;
         private $_ingredient;
@@ -45,5 +45,5 @@
             return $ex;
         }
     }
-        
-    }
+    
+}
