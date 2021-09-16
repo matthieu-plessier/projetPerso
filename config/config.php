@@ -20,7 +20,15 @@ $messageCode = [
 ];
 
 // Ici on défini les variables de connection
-
 define('DSN', 'mysql:host=localhost;dbname=comme_a_la_maison;charset=utf8');
 define('LOGIN', 'root');
 define('PASSWORD', '');
+
+// Ici on défini la pagination
+define('NB_ELEMENTS_BY_PAGE', 3);
+
+// Ici on défini les limite pour l'upload
+define('LIMIT_WEIGHT', 2*1024*1024);
+define('SUPPORTED_FORMAT', array('image/jpeg', 'image/png'));
+define('MIN_WIDTH', 200);
+define('MIN_HEIGHT', 200);

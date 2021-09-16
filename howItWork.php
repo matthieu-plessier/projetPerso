@@ -4,7 +4,7 @@
 ?>
 <h1 class="text-white">Comment ca marche ...</h1>
 
-<div class="container">
+<div class="howItWork container">
     <div class="row">
         <div class="howItWorkImg col"></div>
         <div class="howItWorkText col">

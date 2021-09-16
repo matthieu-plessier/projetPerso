@@ -45,5 +45,60 @@ class Recipe {
             return $ex;
         }
     }
-    
+    ///////////////////////////////////////////// PAGINATION /////////////////////////////////
+
+    /**
+     * Méthode qui permet de lister toutes les recettes existants en fonction d'un mot clé et selon pagination
+     * 
+     * @return array
+     */
+    public static function getAll($search='', $limit=null, $offset=0){
+        
+        try{
+            if(!is_null($limit)){ // Si une limite est fixée, il faut tout lister
+                $sql = 'SELECT * FROM `recipe` 
+                WHERE `name` LIKE :search 
+                LIMIT :limit OFFSET :offset;';
+            } else {
+                $sql = 'SELECT * FROM `recipe` 
+                WHERE `name` LIKE :search;';
+            }
+            $pdo = Database::getInstance();
+
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindValue(':search','%'.$search.'%',PDO::PARAM_STR);
+            
+            if(!is_null($limit)){
+                $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+                $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
+            }
+            
+            $stmt->execute();
+            return($stmt->fetchAll());
+        }
+        catch (PDOException $e){
+            return false;
+        }
+    }   
+    /**
+     * Méthode qui permet de compter les patients
+     * 
+     * @return int
+     */
+    public static function count($s){
+        $pdo = Database::getInstance();
+        try{
+            $sql = 'SELECT * FROM `recipe`
+                WHERE `name` LIKE :search;';
+
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindValue(':search','%'.$s.'%',PDO::PARAM_STR);
+            $stmt->execute();
+            return($stmt->rowCount());
+        }
+        catch(PDOException $e){
+            return 0;
+        }
+        
+    }
 }

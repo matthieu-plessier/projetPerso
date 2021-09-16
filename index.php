@@ -26,6 +26,7 @@
             </div>
             <div class="modal-body">
                 <div>Remplissez le formulaire ci-dessous pour ajouter votre produit au magasin</div><br>
+                
                 <label for="nickname" type="text" class="form-label">Votre pseudo</label>
                 <input class="form-control" type="text" placeholder="Pseudo" aria-label="default input example">
                 <br>

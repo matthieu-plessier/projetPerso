@@ -73,7 +73,7 @@ h5,h3{
 }
 
 .main {
-    height: 100vh;
+    height: 86vh;
     background-image: url(/public/img/Pourlecorps/bougiesetsel.jpg);
     background-size: cover;
     background-position: 50%;
@@ -90,7 +90,13 @@ h5,h3{
 .btn-color:hover {
     background-color:white;
 }
-
+.page-link{
+    color:#236d5e
+}
+.page-item.active .page-link{
+    background-color: #236d5e;
+    border-color: #236d5e;
+}
 .btn-outline:hover {
     background-color: #236d5e;
 }
@@ -127,6 +133,9 @@ footer {
     border: 2px solid grey;
     border-radius: 20px;
     margin: 15px;
+}
+.howItWork {
+    height: 100%;
 }
 #recipesPage {
     height: 100%;
