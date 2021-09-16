@@ -8,7 +8,7 @@
         private $_quantity;
         private $_ingredient;
         private $_id_recipe;
-        private $db;
+        private $_pdo;
     
     // Méthode magique pour hydrater
 
@@ -19,11 +19,35 @@
             $this->_quantity=$quantity;
             $this->_ingredient=$ingredient;
             
-            $this->_id_recip=$id_recipe;
+            $this->_id_recipe=$id_recipe;
             
             
-            $this->db = Database::getInstance();
+            $this->_pdo = Database::getInstance();
             }
+    }
+
+    public function create(){
+        try{
+            $sql = 'INSERT INTO `ingredients` (`quantity`, `ingredient`, `id_recipe`) 
+                    VALUES (:quantity, :ingredient, :id_recipe);';
+            
+            $sth = $this->_pdo->prepare($sql);
+
+            $sth->bindValue(':quantity',$this->_quantity,PDO::PARAM_STR);
+            $sth->bindValue(':ingredient',$this->_ingredient,PDO::PARAM_STR);
+            $sth->bindValue(':id_recipe',$this->_id_recipe,PDO::PARAM_INT);
+            
+            if($sth->execute()){
+                return 5;
+            } else {
+                return 1;
+            }
+        }
+        catch(PDOException $e){
+            var_dump($e);
+            die;
+            return 1;
+        }
     }
 
     public static function findAll(){

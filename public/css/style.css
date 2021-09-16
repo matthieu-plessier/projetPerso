@@ -1,12 +1,41 @@
-html{
-    height: auto;
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
 }
-body { 
-    height: 100%;
+
+::-webkit-scrollbar-track {
+    background: #ffffff;
+    border: 1px solid #aeaeb5;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #236d5e;
+    border: 1px solid #236d5e
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #318d7b
+}
+::-webkit-scrollbar-thumb:active { 
+    background: #318d7b
+}
+
+.addRecipText::-webkit-scrollbar-track{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background: #ffffff;
+    border: 1px solid #aeaeb5;
+}
+
+.addRecipText::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+}
+
+html,body { 
+    height: 100vh;
     font-size: initial;
 }
 h1 {
-
     text-align: center;
     margin-bottom: 0px;
     font-size: 45px;
@@ -71,7 +100,9 @@ h5,h3{
 .navbar-collapse {
     justify-content: flex-end
 }
-
+.bodyRecipes{
+    min-height: calc(100vh - 10vh);
+}
 .main {
     height: 86vh;
     background-image: url(/public/img/Pourlecorps/bougiesetsel.jpg);
@@ -82,6 +113,7 @@ h5,h3{
 
 .card {
     background-color: rgba(255,255,255, 0.2);
+    height: fit-content;
 }
 
 .btn-color {
@@ -102,7 +134,10 @@ h5,h3{
 }
 footer {
     width: 100%;
-    height: 50px;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #236d5e;
 }
 .registration {
@@ -138,7 +173,7 @@ footer {
     height: 100%;
 }
 #recipesPage {
-    height: 100%;
+    min-height: 90vh;
     background-image: url(/public/img/Pourlecorps/liniment.jpg);
     background-size: cover;
     background-position: 50%;
@@ -201,7 +236,6 @@ footer {
     font-size: x-large;
 }
 .addRecipImg{
-    height: 100vh;
     background-image: url(/public/img/Pourlecorps/photo-of-thoughtful-man-holds-chin-looks-pensively-upwards-wears-white-jumper-and-gloves-uses-washing-up-liquid-cleanser-isolated-over-pink-space.png);
     background-size: cover;
     background-position: 50%;
@@ -215,7 +249,9 @@ footer {
     font-size: x-large;
 }
 .addRecipText{
-    height: 100vh;
+    overflow-y: auto;
+    height: 80vh;
+    
     background-size: cover;
     background-position: 50%;
     background-color: rgba(255,255,255, 0.3);
@@ -226,4 +262,14 @@ footer {
     border-radius: 20px;
     margin: 15px;
     font-size: x-large;
+}
+
+.editUser {
+    
+    background-image: url(/public/img/Pourlamaison/lessiveMaison.jpg);
+    background-size: cover;
+    background-position: 50%;
+    display: flex;
+    font-weight: bolder;
+
 }

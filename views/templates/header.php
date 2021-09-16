@@ -81,7 +81,7 @@ if(!empty($_SESSION)){
                                 <?=$_SESSION['user']->firstname?> <?=$_SESSION['user']->lastname?>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                                <li><a href="" class="nav-link me-2" aria-current="page" data-bs-toggle="modal" data-bs-target="#profil-user">Profil</a></li>
+                                <li><a href="../../controllers/profil-user_ctrl.php" class="nav-link me-2" aria-current="page">Profil</a></li>
                                 <li><a class="nav-link me-2" aria-current="page"
                                         href="/controllers/deconnectUser_ctrl.php">Déconnexion</a></li>
 
@@ -117,7 +117,7 @@ if(!empty($_SESSION)){
                                 <label for="password " class="form-label">Votre mot de passe :</label>
                                 <input type="password" name="password"
                                     class="form-control <?=isset($error['password']) ? 'errorField' : ''?>"
-                                    value="<?=htmlentities($password ?? '') ?>" pattern="<?=REGEX_PASSWORD?>"
+                                    value="<?=htmlentities($password ?? '') ?>" 
                                     placeholder="ex : 123abc456" autocomplete="new-password" id="password">
                             </div>
                             <div class="error"><?=$error['password'] ?? ''?></div>
@@ -132,81 +132,5 @@ if(!empty($_SESSION)){
 
                 </div>
             </div>
-        </div>
-
-        <!-- //////////////////////////////////////////// MODAL DE PROFIL ET MODIFICATION //////////////////////////////////////////// -->
-        
-
-        <div class="modal fade" id="profil-user" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Modifications de vos données</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    
-                    <div class="modal-body">
-                    <form class=" " action="" method="post">
-                        <!-- NOM -->
-                        <div class="mb-3">
-                            <label for="lastname" class="form-label">Votre nom* :</label>
-                            <input type="text" 
-                                    name="lastname" 
-                                    class="form-control"
-                                    value="<?= $resultCheckUser->lastname?>">
-                        </div>
-
-                        <!-- PRENOM -->
-
-                        <div class="mb-3">
-                            <label for="firstname" class="form-label">Votre Prénom* :</label>
-                            <input type="text" 
-                                    name="firstname" 
-                                    class="form-control"
-                                    value="<?= $resultCheckUser->firstname?>">
-                        </div>
-
-                        <!-- MAIL -->
-
-                        <div class="mb-3">
-                            <label for="mail" class="form-label">Votre mail* :</label>
-                            <input type="text" 
-                                    name="mail" 
-                                    class="form-control"
-                                    value="<?= $resultCheckUser->mail?>">
-                        </div>
-
-                        <!-- MOT DE PASSE -->
-
-                        <div class="mb-3">
-                            <label for="passord1" class="form-label">Votre mot de passe* :</label>
-                            <input type="password" 
-                                    name="password1" 
-                                    class="form-control"
-                                    value="">
-                        </div>
-
-                        <!-- CONFIRMATION DE MOT PASSE -->
-
-                        <div class="mb-3">
-                            <label for="lastname" class="form-label">Confirmation de votre mot de passe* :</label>
-                            <input type="password" 
-                                    name="password2" 
-                                    class="form-control"
-                                    value="">
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                            <button type="submit" class="btn btn-primary">Valider les modifications</button>
-                        </div>
-                        
-                    </form>
-                    </div>
-                    
-                </div>
-                
-            </div>
-        </div>
         </div>
     </header>

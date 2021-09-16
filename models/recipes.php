@@ -5,31 +5,52 @@
 class Recipe {
         
         private $_id;
-        private $_ingredient;
-        private $_quantity;
+        private $_name;
         private $_process_comment;
-        private $_image;
         private $_type_of_product;
-        private $db;
+        private $_pdo;
     
     // Méthode magique pour hydrater
 
-    public function __construct($id = "", $ingredient = "", $quantity = "", $process_comment = "", $image ="", $type_of_product = "" )
+    public function __construct($id = "", $name = "", $process_comment = "", $type_of_product = "" )
     {
         {
             $this->_id=$id; 
-            $this->_ingredient=$ingredient;
-            $this->_quantity=$quantity;
+            $this->_name=$name;
             $this->_process_comment=$process_comment;
-            $this->_image=$image;
             $this->_type_of_product=$type_of_product;
             
-            $this->db = Database::getInstance();
+            $this->_pdo = Database::getInstance();
             }
     }
+
+    public function create(){
+        try{
+            $sql = 'INSERT INTO `recipe` (`name`, `process_comment`, `id_type_of_product`) 
+                    VALUES (:name, :process_comment, :type_of_product);';
+            
+            $sth = $this->_pdo->prepare($sql);
+
+            $sth->bindValue(':name',$this->_name,PDO::PARAM_STR);
+            $sth->bindValue(':process_comment',$this->_process_comment,PDO::PARAM_STR);
+            $sth->bindValue(':type_of_product',$this->_type_of_product,PDO::PARAM_STR);
+            
+            if($sth->execute()){
+                return 5;
+            } else {
+                return 1;
+            }
+        }
+        catch(PDOException $e){
+            var_dump($e);
+            die;
+            return 1;
+        }
+    }
+
     public static function findAll(){
         // requête sql
-        $sql = "SELECT * FROM `recipe`";
+        $sql = "SELECT * FROM `recipe` ORDER BY `id` DESC";
         
         
         
@@ -58,10 +79,13 @@ class Recipe {
             if(!is_null($limit)){ // Si une limite est fixée, il faut tout lister
                 $sql = 'SELECT * FROM `recipe` 
                 WHERE `name` LIKE :search 
-                LIMIT :limit OFFSET :offset;';
+                ORDER BY `id` DESC
+                LIMIT :limit OFFSET :offset ;';
             } else {
                 $sql = 'SELECT * FROM `recipe` 
-                WHERE `name` LIKE :search;';
+                WHERE `name` 
+                ORDER BY `id` DESC 
+                LIKE :search ;';
             }
             $pdo = Database::getInstance();
 

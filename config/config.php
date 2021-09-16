@@ -25,7 +25,7 @@ define('LOGIN', 'root');
 define('PASSWORD', '');
 
 // Ici on défini la pagination
-define('NB_ELEMENTS_BY_PAGE', 3);
+define('NB_ELEMENTS_BY_PAGE', 4);
 
 // Ici on défini les limite pour l'upload
 define('LIMIT_WEIGHT', 2*1024*1024);

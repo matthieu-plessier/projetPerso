@@ -3,10 +3,11 @@
 session_start();
 require_once(dirname(__FILE__).'/../models/users.php');
 require_once(dirname(__FILE__).'/../utils/regex.php');
-require_once(dirname(__FILE__).'/../config/config.php.php');
+require_once(dirname(__FILE__).'/../config/config.php');
 $code = NULL;
 
 // On récup l'ID en GET
+$id = trim(filter_input(INPUT_GET,'id',FILTER_SANITIZE_NUMBER_INT));
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
@@ -79,3 +80,9 @@ if (!$resultCheckUser) {
 }
 
 }
+
+include(dirname(__FILE__).'/../views/templates/header.php');
+
+include(dirname(__FILE__).'/../views/user/profil-user.php');
+
+include(dirname(__FILE__).'/../views/templates/footer.php');

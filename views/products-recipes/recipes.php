@@ -1,19 +1,19 @@
-<h1 class="text-white">Nos recettes Beauté</h1>
 
 <div class="bodyRecipes">
 
+    <h1 class="text-white">Nos recettes Beauté</h1>
 
-    <div class="row row-cols-1 row-cols-md-3 g-4 m-0" id="recipesPage">
+    <div class="row row-cols-1 row-cols-md-4 m-0 pt-5" id="recipesPage">
         <?php foreach($recipes as $recipe) : 
         $ingredientArray = Ingredient::get($recipe->id);
         ?>
 
-        <div class="col" id="recipesCard<?= $recipe->id ?>">
-            <div class="card">
+        <div class="col mb-5 mb-lg-0 d-flex justify-content-center" id="recipesCard<?= $recipe->id ?>">
+            <div class="card" style="width: 20rem;">
                 <img src="/uploads/recipes/<?= $recipe->id ?>.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title"><?=$recipe->name ?? '' ?></h5>
-                    <p class="card-text"><?=$recipe->process_comment ?? '' ?></p>
+                    <p class="card-text text-truncate"><?=$recipe->process_comment ?? '' ?></p>
                     <button type="button" class="btn btnPropose" data-bs-toggle="modal"
                         data-bs-target="#exampleModal<?= $recipe->id ?>">Voir la recette</button>
                 </div>
@@ -51,8 +51,8 @@
         </div>
         <?php endforeach; ?>
 
-        <nav class="w-100 d-flex justify-content-center">
-            <ul class="pagination pagination-sm">
+        <nav class="w-100 d-flex align-items-center justify-content-center">
+            <ul class="pagination pagination-sm m-0">
                 <?php
                 for($i=1;$i<=$nbPages;$i++){
                 if($i==$currentPage){ ?>

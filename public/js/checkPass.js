@@ -7,3 +7,4 @@ let checkPass = ( event ) =>{
 }
 
 btnSubmit.addEventListener('submit', checkPass)
+
