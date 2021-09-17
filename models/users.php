@@ -200,27 +200,27 @@
     }
     ////////////////////////////////////////////////////// MODIF PROFIL ///////////////////////////////////////////
 
-    public function upDate($id)
+    public function upDate()
     {
         $sql ="UPDATE  `user` 
                 SET `lastname`= :lastname, `firstname`= :firstname, `mail`= :email, `password1`= :password1, `password2`= :password2
                 WHERE `id` = :id;";
 
-                $req = $this->db->prepare($sql);
+                $req = $this->_pdo->prepare($sql);
 
                 $req->bindValue(':lastname', $this->_lastname, PDO::PARAM_STR);
                 $req->bindValue(':firstname', $this->_firstname, PDO::PARAM_STR);               
-                $req->bindValue(':email', $this->_email, PDO::PARAM_STR);
-                $req->bindValue(':password1', $this->_password1, PDO::PARAM_STR);
-                $req->bindValue(':password2', $this->_password2, PDO::PARAM_STR);
+                $req->bindValue(':email', $this->_mail, PDO::PARAM_STR);
+                $req->bindValue(':password1', $this->_password, PDO::PARAM_STR);
+                
 
-                $req->bindValue(':id', $id, PDO::PARAM_STR);
+                $req->bindValue(':id', $this->_id, PDO::PARAM_STR);
 
 
         try {
             if ($req->execute())
             // retourne les données récup
-            return 3;
+            return 003;
         } catch (PDOException $ex) {
             return false;
         }

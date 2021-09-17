@@ -6,13 +6,16 @@
     <div class="row row-cols-1 row-cols-md-4 m-0 pt-5" id="recipesPage">
         <?php foreach($recipes as $recipe) : 
         $ingredientArray = Ingredient::get($recipe->id);
+        $user = User::get($recipe->id_user);
         ?>
 
         <div class="col mb-5 mb-lg-0 d-flex justify-content-center" id="recipesCard<?= $recipe->id ?>">
             <div class="card" style="width: 20rem;">
                 <img src="/uploads/recipes/<?= $recipe->id ?>.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
+                    <i>Proposé par : <?= $user->lastname.' '.$user->firstname?></i>
                     <h5 class="card-title"><?=$recipe->name ?? '' ?></h5>
+                    
                     <p class="card-text text-truncate"><?=$recipe->process_comment ?? '' ?></p>
                     <button type="button" class="btn btnPropose" data-bs-toggle="modal"
                         data-bs-target="#exampleModal<?= $recipe->id ?>">Voir la recette</button>

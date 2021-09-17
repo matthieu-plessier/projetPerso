@@ -8,17 +8,19 @@ class Recipe {
         private $_name;
         private $_process_comment;
         private $_type_of_product;
+        private $_id_user;
         private $_pdo;
     
     // Méthode magique pour hydrater
 
-    public function __construct($id = "", $name = "", $process_comment = "", $type_of_product = "" )
+    public function __construct($id = "", $name = "", $process_comment = "", $type_of_product = "", $id_user = "" )
     {
         {
             $this->_id=$id; 
             $this->_name=$name;
             $this->_process_comment=$process_comment;
             $this->_type_of_product=$type_of_product;
+            $this->_id_user=$id_user;
             
             $this->_pdo = Database::getInstance();
             }
@@ -26,24 +28,23 @@ class Recipe {
 
     public function create(){
         try{
-            $sql = 'INSERT INTO `recipe` (`name`, `process_comment`, `id_type_of_product`) 
-                    VALUES (:name, :process_comment, :type_of_product);';
+            $sql = 'INSERT INTO `recipe` (`name`, `process_comment`, `id_type_of_product`, `id_user`) 
+                    VALUES (:name, :process_comment, :type_of_product, :id_user);';
             
             $sth = $this->_pdo->prepare($sql);
 
             $sth->bindValue(':name',$this->_name,PDO::PARAM_STR);
             $sth->bindValue(':process_comment',$this->_process_comment,PDO::PARAM_STR);
             $sth->bindValue(':type_of_product',$this->_type_of_product,PDO::PARAM_STR);
+            $sth->bindValue(':id_user',$this->_id_user,PDO::PARAM_INT);
             
             if($sth->execute()){
-                return 5;
+                return 17;
             } else {
                 return 1;
             }
         }
         catch(PDOException $e){
-            var_dump($e);
-            die;
             return 1;
         }
     }

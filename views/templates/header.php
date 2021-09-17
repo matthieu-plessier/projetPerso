@@ -83,7 +83,7 @@ if(!empty($_SESSION)){
                             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                                 <li><a href="../../controllers/profil-user_ctrl.php" class="nav-link me-2" aria-current="page">Profil</a></li>
                                 <li><a class="nav-link me-2" aria-current="page"
-                                        href="/controllers/deconnectUser_ctrl.php">Déconnexion</a></li>
+                                        href="/controllers/disconnectUser_ctrl.php">Déconnexion</a></li>
 
                             </ul>
                         </li>

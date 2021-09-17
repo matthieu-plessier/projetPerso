@@ -38,14 +38,12 @@
             $sth->bindValue(':id_recipe',$this->_id_recipe,PDO::PARAM_INT);
             
             if($sth->execute()){
-                return 5;
+                return 17;
             } else {
                 return 1;
             }
         }
         catch(PDOException $e){
-            var_dump($e);
-            die;
             return 1;
         }
     }

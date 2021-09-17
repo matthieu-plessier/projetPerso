@@ -1,5 +1,5 @@
 
-<form action="<?=htmlspecialchars($_SERVER['PHP_SELF'])?>" method="post" id="formUser">
+
 
 <h1 class="text-white">Votre profil :</h1>
 
@@ -11,41 +11,31 @@
 <div class="editUser">
     
     <div class="textRegistration">
-        <h2>Mofifiez vos recettes :</h2>
+        <h2>Modifiez vos recettes :</h2>
         <table class="table ">
-        <thead>
-            
-            <th scope="col">Nom</th>
-            <th scope="col">ingredients</th>
-            <th scope="col">Quantity</th>
-            <th scope="col">Process</th>
-            <th scope="col">Image</th>
-            
-            <th scope="col">Supprimer</th>
-        </thead>
 
-        <tbody>
-            <?php 
-                foreach($recipes as $recipe) : ?>
-            <tr class="table-primary align-middle">
-                <td scope="row"><?=$recipe->id ?? '' ?></td>
-                <td><?=$recipe->name ?? '' ?></td>
-                <td><?=$recipe->ingredients ?? '' ?></td>
-                <td><?=$recipe->quantity ?? '' ?></td>
-                <td ><?=$recipe->process_comment ?? '' ?></td>
-                <td><?= $recipe->image ?? ''?></td>
-                <td><?=$recipe->id_type_of_product ?? ''?></td>
-                <td><a href="/controllers/delete-user_ctrl.php?id=<?=$recipe->id ?>"><img
-                            src="https://img.icons8.com/color/48/000000/delete-forever.png/"></a></td>
-            </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+            <thead>
+                <th scope="col">Nom</th>
+                <th scope="col">Modifier</th>
+                <th scope="col">Supprimer</th>
+            </thead>
+
+            <tbody>
+                <?php 
+                    foreach($recipes as $recipe) : ?>
+                <tr class="table-primary align-middle">
+                    <td><?=$recipe->name ?? '' ?></td>
+                    <td><a href="/controllers/delete-user_ctrl.php?id=<?=$recipe->id ?>"><img
+                                src="https://img.icons8.com/color/48/000000/delete-forever.png/"></a></td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
     </div>
     
     <div class="form">
         <h2>Mofifiez vos infos personnelles :</h2>
-        <form>
+        <form method="post" action="/controllers/edit-user_ctrl.php">
 
         
         <!-- NOM -->
@@ -80,7 +70,7 @@
                 <label for="email" class="form-label">Votre adresse mail* :</label>
                 <input 
                     type="email" 
-                    name="email"
+                    name="mail"
                     value="<?= $resultCheckUser->mail ?>"
                     class="form-control  <?=isset($error['email']) ? 'errorField' : ''?>" 
                     id="email" 
@@ -116,7 +106,7 @@
                 <div class="error alert-danger text-center"><?=$errorsArray['password2'] ?? ''?></div>
             </div>
             
-            <button type="submit" class="btn btn-success" style="background-color: #236d5e;">Envoyé</button>
+            <button type="submit" class="btn btn-success" style="background-color: #236d5e;">Envoyer</button>
         </form>
     </div>
 </div>

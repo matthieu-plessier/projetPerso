@@ -4,10 +4,16 @@
     <div class="row">
         <div class="addRecipText col">
             <h3>C'est a vous de jouer !</h3>
-                        <form action="" method="post" enctype="multipart/form-data">
-            <div class="mb-3">
+            <form action="" method="post" enctype="multipart/form-data">
+                <?php 
+                    if($code){
+                        echo '<div class="text-center m-0 alert'.' '.$messageCode[$code]['type'].' "><img src="https://img.icons8.com/ios-glyphs/32/000000/right.png"/> '.$messageCode[$code]['msg'].' <img src="https://img.icons8.com/ios-glyphs/32/000000/left.png"/></div>';
+                    }
+                ?>
+                <div class="mb-3">
                     <label for="formFile" class="form-label" >Ajouter une image</label>
                     <input class="form-control" type="file" id="formFile" name="formFile">
+                    <small class="alert-danger text-center"><?= $errorsArray['file'] ?? '' ?></small>
                 </div>
                 <div class="col-12">
                     <label for="nameRecipe" class="form-label">Nom de la recette</label>
@@ -33,7 +39,7 @@
                         </div>
                     </div>
                     
-                    <div>
+                    <div class="text-center">
                         <input type="button" class="btn btn-success" style="background-color: #236d5e;" value="+" onclick="plus()" />
                         <input type="button" class="btn btn-success" style="background-color: #236d5e;" style="display:none" id="sup" value="-" onclick="moins()" />
                     </div>
@@ -42,7 +48,9 @@
                 <div class="form-floating">
                     <textarea class="form-control" name="process" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
                 </div>
+                <div class="text-center">
                 <button type="submit" class="btn btn-success" style="background-color: #236d5e;">Envoyé</button>
+                </div>
             </form>
             <br>
             <p>Merci pour votre contribution !</p>

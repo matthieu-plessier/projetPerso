@@ -62,97 +62,107 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $errorsArray['ingredients'] = 'ERREUR pas d\'ingredient';
     }
 
-    if(empty($errorsArray)){
-        $recipe = new Recipe('', $nameRecipe, $process, $type);
-        $code = $recipe->create();
-        $pdo = Database::getInstance();
-        $lastId = $pdo->lastInsertId();
+    if($_FILES['formFile'] && $_FILES['formFile']['error']==0){
 
-        foreach ($ingredientsArray as $value) {
-            $ingredient = new Ingredient('', $value['quantity'],$value['ingredient'], $lastId);
-            $code = $ingredient->create();
+        // Vérification du poids limité
+        if($_FILES['formFile']['size'] > LIMIT_WEIGHT){
+            $errorsArray['file'] = 'Poids limite dépassée (2 Mo max)';
         }
-        
-        if($_FILES['formFile'] && $_FILES['formFile']['error']==0){
+        // Vérification du format autorisé
+        $mime = mime_content_type($_FILES['formFile']['tmp_name']);
+        if(!in_array($mime, SUPPORTED_FORMAT)){
+            $errorsArray['file'] = 'Format non autorisé';
+        }
 
-            // Vérification du poids limité
-            if($_FILES['formFile']['size'] > LIMIT_WEIGHT){
-                $errorsArray['file'] = 'Poids limite dépassée';
+        $sizes = getimagesize($_FILES['formFile']['tmp_name']);
+        $originalWidth = $sizes[0];
+        $originalHeight = $sizes[1];
+        if($originalWidth < MIN_WIDTH || $originalHeight < MIN_HEIGHT){
+            $errorsArray['file'] = 'Dimensions trop petites';
+        }
+        //Enregistrement du fichier sur mon site
+        if(empty($errorsArray)){
+            $from = $_FILES['formFile']['tmp_name'];
+
+            // Redimensionnement
+            $src_width = $originalWidth;
+            $src_height = $originalHeight;
+
+            // Si format portrait on redimensionne selon la largeur sinon, selon la hauteur
+            if($src_width<$src_height){
+                $dst_width = 200;
+                $dst_height = $dst_width*$src_height/$src_width;
+            } else {
+                $dst_height = 200;
+                $dst_width = $dst_height*$src_width/$src_height;
             }
-            // Vérification du format autorisé
-            $mime = mime_content_type($_FILES['formFile']['tmp_name']);
-            if(!in_array($mime, SUPPORTED_FORMAT)){
-                $errorsArray['file'] = 'Format non autorisé';
-            }
-    
-            $sizes = getimagesize($_FILES['formFile']['tmp_name']);
-            $originalWidth = $sizes[0];
-            $originalHeight = $sizes[1];
-            if($originalWidth < MIN_WIDTH || $originalHeight < MIN_HEIGHT){
-                $errorsArray['file'] = 'Dimensions trop petites';
-            }
-            //Enregistrement du fichier sur mon site
-            if(empty($errorsArray)){
-                $from = $_FILES['formFile']['tmp_name'];
-                if(empty($errorsArray)){
-                    // Redimensionnement
-                    $src_width = $originalWidth;
-                    $src_height = $originalHeight;
-    
-                    // Si format portrait on redimensionne selon la largeur sinon, selon la hauteur
-                    if($src_width<$src_height){
-                        $dst_width = 200;
-                        $dst_height = $dst_width*$src_height/$src_width;
-                    } else {
-                        $dst_height = 200;
-                        $dst_width = $dst_height*$src_width/$src_height;
+
+            $dst_image = imagecreatetruecolor($dst_width, $dst_height);
+
+            // On pourrait creer une ressource selon le type mime de fichier
+            $src_image = imagecreatefromjpeg($from); // Ou $to (ligne 33)
+            //$src_image = imagecreatefrompng($from); // Ou $to (ligne 33)
+
+            $dst_x = 0;
+            $dst_y = 0;
+            $src_x = 0;
+            $src_y = 0;
+
+            $isResampled = imagecopyresampled(
+                $dst_image,
+                $src_image,
+                $dst_x,
+                $dst_y,
+                $src_x,
+                $src_y,
+                $dst_width,
+                $dst_height,
+                $src_width,
+                $src_height
+            );
+
+            if($isResampled){
+                try {
+                    $pdo = Database::getInstance();
+                    $pdo->beginTransaction();
+
+                    $recipe = new Recipe('', $nameRecipe, $process, $type, $_SESSION['user']->id);
+                    $code = $recipe->create();
+                    if($code != 17){
+                        throw new Exception($code);
                     }
-    
-                    $dst_image = imagecreatetruecolor($dst_width, $dst_height);
-    
-                    // On pourrait creer une ressource selon le type mime de fichier
-                    $src_image = imagecreatefromjpeg($from); // Ou $to (ligne 33)
-                    //$src_image = imagecreatefrompng($from); // Ou $to (ligne 33)
-    
-                    $dst_x = 0;
-                    $dst_y = 0;
-                    $src_x = 0;
-                    $src_y = 0;
-    
-                    $isResampled = imagecopyresampled(
-                        $dst_image,
-                        $src_image,
-                        $dst_x,
-                        $dst_y,
-                        $src_x,
-                        $src_y,
-                        $dst_width,
-                        $dst_height,
-                        $src_width,
-                        $src_height
-                    );
-    
-                    if($isResampled){
-                        $dst_resampled_file = dirname(__FILE__) . '/../uploads/recipes/'.$lastId.'.jpg';
-                        imagejpeg($dst_image, $dst_resampled_file,75);
-    
-                        // Recadrage
-                        $im = imagecreatefromjpeg($dst_resampled_file);
-                        $croppedRessource = imagecrop($im, ['x' => 0, 'y' => 0, 'width' => 200, 'height' => 200]);
-                        $dst_cropped_file = dirname(__FILE__) . '/../uploads/recipes/'.$lastId.'.jpg';
-                        imagejpeg($croppedRessource, $dst_cropped_file,75);
-                    } else {
-                        $errorsArray['file'] = 'Problème lors du recadrage';
+                    $lastId = $pdo->lastInsertId();
+
+                    foreach ($ingredientsArray as $value) {
+                        $ingredient = new Ingredient('', $value['quantity'],$value['ingredient'], $lastId);
+                        $code = $ingredient->create();
+                        if($code != 17){
+                            throw new Exception($code);
+                        }
                     }
-    
+                    $pdo->commit();
+
+                    $dst_resampled_file = dirname(__FILE__) . '/../uploads/recipes/'.$lastId.'.jpg';
+                    imagejpeg($dst_image, $dst_resampled_file,75);
+
+                    // Recadrage
+                    $im = imagecreatefromjpeg($dst_resampled_file);
+                    $croppedRessource = imagecrop($im, ['x' => 0, 'y' => 0, 'width' => 200, 'height' => 200]);
+                    $dst_cropped_file = dirname(__FILE__) . '/../uploads/recipes/'.$lastId.'.jpg';
+                    imagejpeg($croppedRessource, $dst_cropped_file,75);
+                } catch (Exception $ex) {
+                    $pdo->rollBack();
                 }
-    
+                
+
+                
+            } else {
+                $errorsArray['file'] = 'Problème lors du recadrage';
             }
-        } else {
-            $errorsArray['file'] = "Une erreur s'est produite lors de l'envoi du fichier";
         }
+    } else {
+        $errorsArray['file'] = "Une erreur s'est produite lors de l'envoi du fichier";
     }
-    
 ///////////////////////////////////////////////////////////////// FIN DE GESTION DE L UPLOAD ///////////////////////////////////////////////////
 }
 

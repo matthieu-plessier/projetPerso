@@ -16,6 +16,7 @@ $messageCode = [
     014 => ['type' => 'alert-success', 'msg' => 'Le rdv est bien supprimé !'],
     015 => ['type' => 'alert-success', 'msg' => 'Le user est bien supprimé !'],
     016 => ['type' => 'alert-danger', 'msg' => 'Aucune correspondances trouvées'],
+    17 => ['type' => 'alert-success', 'msg' => 'Recette ajoutée'],
 
 ];
 
