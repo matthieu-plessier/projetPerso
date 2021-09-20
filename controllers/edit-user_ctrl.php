@@ -4,14 +4,14 @@ require_once(dirname(__FILE__) . '/../utils/regex.php');
 require_once(dirname(__FILE__) . '/../models/users.php');
 require_once(dirname(__FILE__) . '/../config/config.php');
 
+
+
+// ---------------------------------- ICI ON RECUPERE LE PROFIL USER ---------------------------------------------------
+
 $resultCheckUser = User::checkUser($_SESSION['user']->id);
 // Initialisation du tableau d'erreurs
 $errorsArray = array();
 /*************************************/
-
-// Nettoyage de l'id passé en GET dans l'url
-$id = intval(trim(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT)));
-/*************************************************************/
 
 // Nettoyage de l'id passé en GET dans l'url
 $id = intval(trim(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT)));

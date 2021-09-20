@@ -40,6 +40,8 @@ if(!empty($_SESSION)){
                                         href="/controllers/products_ctrl.php">Pour le corps</a></li>
                                 <li><a class="nav-link me-2" aria-current="page"
                                         href="/controllers/products_ctrl.php">Pour la maison</a></li>
+                                <li><a class="nav-link me-2" aria-current="page"
+                                        href="/controllers/products_ctrl.php">Proposer vos produits</a></li>
 
                             </ul>
                         </li>
@@ -50,9 +52,9 @@ if(!empty($_SESSION)){
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                                 <li><a class="nav-link me-2" aria-current="page"
-                                        href="/controllers/recipes_ctrl.php">Pour le corps</a></li>
+                                        href="/controllers/recipes_ctrl.php?type=1">Pour le corps</a></li>
                                 <li><a class="nav-link me-2" aria-current="page"
-                                        href="/controllers/recipes_ctrl.php">Pour la maison</a></li>
+                                        href="/controllers/recipes_ctrl.php?type=2">Pour la maison</a></li>
                                 <li><a class="nav-link me-2" aria-current="page"
                                         href="/controllers/addRecipe_ctrl.php">Proposer une recette</a></li>
 
@@ -84,7 +86,6 @@ if(!empty($_SESSION)){
                                 <li><a href="../../controllers/profil-user_ctrl.php" class="nav-link me-2" aria-current="page">Profil</a></li>
                                 <li><a class="nav-link me-2" aria-current="page"
                                         href="/controllers/disconnectUser_ctrl.php">Déconnexion</a></li>
-
                             </ul>
                         </li>
                         <?php } ?>

@@ -169,9 +169,7 @@ footer {
     border-radius: 20px;
     margin: 15px;
 }
-.howItWork {
-    height: 100%;
-}
+
 #recipesPage {
     min-height: 90vh;
     background-image: url(/public/img/Pourlecorps/liniment.jpg);
@@ -182,7 +180,7 @@ footer {
     height: fit-content;
 }
 .congratulation{
-    height: 100vh;
+    height: 69vh;
     background-image: url(/public/img/Pourlecorps/liniment.jpg);
     background-size: cover;
     background-position: 50%;
@@ -196,7 +194,7 @@ footer {
     font-size: x-large;
 }
 .textCongratulation{
-    height: 100vh;
+    height: 100%;
     background-size: cover;
     background-position: 50%;
     background-color: rgba(255,255,255, 0.3);
@@ -251,7 +249,6 @@ footer {
 .addRecipText{
     overflow-y: auto;
     height: 80vh;
-    
     background-size: cover;
     background-position: 50%;
     background-color: rgba(255,255,255, 0.3);
@@ -272,4 +269,17 @@ footer {
     display: flex;
     font-weight: bolder;
 
+}
+.profilRecip {
+    background-image: url(/public/img/Pourlecorps/savonetpoudre.jpg);
+    background-size: cover;
+    background-position: 50%;
+    background-color: rgba(255,255,255, 0.3);
+    width: 50%;
+    width: 50%;
+    padding: 10px;
+    border: 2px solid grey;
+    border-radius: 20px;
+    margin: 15px;
+    font-size: x-large;
 }

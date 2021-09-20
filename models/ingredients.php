@@ -86,4 +86,20 @@
             return $e;
         }
     }  
+    public function updateIngredient($id_recipe){
+        try{
+            $sql = 'UPDATE `ingredients` SET `quantity` = :quantity, `ingredient` = :ingredient 
+                    WHERE `id` = :id;';
+            $sth = $this->_pdo->prepare($sql);
+            $sth->bindValue(':quantity',$this->_quantity,PDO::PARAM_STR);
+            $sth->bindValue(':ingredient',$this->_ingredient,PDO::PARAM_STR);
+            $sth->bindValue(':id',$this->_id,PDO::PARAM_INT);
+            $sth->execute();
+            return 3; 
+        }
+        catch(PDOException $e){
+            return $e;
+        }
+
+    }
     }

@@ -5,7 +5,11 @@ include(dirname(__FILE__).'/../utils/regex.php');
 include(dirname(__FILE__).'/../models/recipes.php');
 include(dirname(__FILE__).'/../models/ingredients.php');
 
-
+// if(empty($_SESSION['user'])){
+//     //redirection
+//     header('location : index.php');
+//     exit();
+// }
 
 // Initialisation du tableau d'erreurs
 $errorsArray = array();

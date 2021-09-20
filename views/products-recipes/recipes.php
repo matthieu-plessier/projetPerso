@@ -66,7 +66,7 @@
                     </span>
                 </li>
                 <?php } else { ?>
-                <li class="page-item"><a class="page-link" href="?currentPage=<?=$i?>&s=<?=$s?>"><?=$i?></a></li>
+                <li class="page-item"><a class="page-link" href="?currentPage=<?=$i?>&s=<?=$s?>&type=<?=$type?>"><?=$i?></a></li>
                 <?php } 
             }?>
             </ul>

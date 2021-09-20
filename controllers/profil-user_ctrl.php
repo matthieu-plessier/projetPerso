@@ -2,6 +2,7 @@
 
 session_start();
 require_once(dirname(__FILE__).'/../models/users.php');
+require_once(dirname(__FILE__).'/../models/recipes.php');
 require_once(dirname(__FILE__).'/../utils/regex.php');
 require_once(dirname(__FILE__).'/../config/config.php');
 $code = NULL;
@@ -80,6 +81,7 @@ if (!$resultCheckUser) {
 }
 
 }
+$recipes = Recipe::getRecipe($_SESSION['user']->id);
 
 include(dirname(__FILE__).'/../views/templates/header.php');
 
