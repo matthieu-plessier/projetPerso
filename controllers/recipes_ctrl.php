@@ -6,7 +6,10 @@ require_once(dirname(__FILE__).'/../models/ingredients.php');
 
 $s = trim(filter_input(INPUT_GET, 's', FILTER_SANITIZE_STRING));
 $type = intval(trim(filter_input(INPUT_GET, 'type', FILTER_SANITIZE_NUMBER_INT)));
-
+if ($type < 1 || $type>2) {
+    header('location: /index.php');
+    exit;
+}
 // On définit le nombre d'éléments par page grâce à une constante déclarée dans config.php
 $limit = NB_ELEMENTS_BY_PAGE;
 

@@ -22,6 +22,7 @@ class Recipe {
             $this->_type_of_product=$type_of_product;
             $this->_id_user=$id_user;
             
+            // Fait appel a la base dbconnect
             $this->_pdo = Database::getInstance();
             }
     }

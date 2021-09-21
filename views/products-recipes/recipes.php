@@ -1,7 +1,7 @@
 
 <div class="bodyRecipes">
 
-    <h1 class="text-white">Nos recettes Beauté</h1>
+    <h1 class="text-white">Nos recettes <?= $head = $type == 1 ? 'beauté' : 'pour la maison'  ?></h1>
 
     <div class="row row-cols-1 row-cols-md-4 m-0 pt-5" id="recipesPage">
         <?php foreach($recipes as $recipe) : 
@@ -47,7 +47,7 @@
                         </p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btnPropose">Sauvegarder cette recette</button>
+                        <i>Proposé par : <?= $user->lastname.' '.$user->firstname?></i>
                     </div>
                 </div>
             </div>

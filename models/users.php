@@ -161,7 +161,7 @@
 
         try{
             $sql = 'SELECT * FROM `user` 
-                    WHERE `mail` = :mail AND confirmed_at IS NOT NULL';
+                    WHERE `mail` = :mail AND confirmed_at IS NOT NULL AND `status` = 1';
 
             $sth = $pdo->prepare($sql);
 
