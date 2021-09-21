@@ -1,6 +1,4 @@
 <?php
-
-
 $messageCode = [
 
     001=> ['type' => 'alert-danger', 'msg' => 'Une erreur SQL est survenue'],
@@ -22,8 +20,8 @@ $messageCode = [
 
 // Ici on défini les variables de connection
 define('DSN', 'mysql:host=localhost;dbname=comme_a_la_maison;charset=utf8');
-define('LOGIN', 'root');
-define('PASSWORD', '');
+define('LOGIN', 'comme_a_la_maison');
+define('PASSWORD', 'bjE&7HytAkxEdaMx');
 
 // Ici on défini la pagination
 define('NB_ELEMENTS_BY_PAGE', 4);

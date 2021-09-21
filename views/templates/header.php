@@ -13,6 +13,7 @@ if(!empty($_SESSION)){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/css/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/media.css">
     <title>Projet perso comme à la maison vente de produit fait maison</title>
 </head>
 

@@ -4,7 +4,7 @@
 ?>
 <!-- FIN NAVBAR -->
 
-<div class="main">
+<div class="main row justify-content-center justify-content-md-start">
     <div class="card text-center ms-md-5" style="width: 18rem;">
         <div class="card-body d-flex flex-column justify-content-center">
             <h5 class="card-title">Pour proposer vos produits c'est ici !</h5>

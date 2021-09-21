@@ -10,7 +10,7 @@
         ?>
 
         <div class="col mb-5 mb-lg-0 d-flex justify-content-center" id="recipesCard<?= $recipe->id ?>">
-            <div class="card" style="width: 20rem;">
+            <div class="card" style="width: 16rem;">
                 <img src="/uploads/recipes/<?= $recipe->id ?>.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <i>Proposé par : <?= $user->lastname.' '.$user->firstname?></i>

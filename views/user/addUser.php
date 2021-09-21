@@ -1,6 +1,4 @@
-
-<form action="<?=htmlspecialchars($_SERVER['PHP_SELF'])?>" method="post" id="formUser">
-
+<div class="container-fluid p-0">
     <h1 class="text-white">Dites nous qui vous êtes :</h1>
     
     <?php 
@@ -8,9 +6,9 @@
             echo '<div class="text-center m-0 alert'.' '.$messageCode[$code]['type'].' "><img src="https://img.icons8.com/ios-glyphs/32/000000/right.png"/>' .$messageCode[$code]['msg'].' <img src="https://img.icons8.com/ios-glyphs/32/000000/left.png"/></div>';
         }
     ?>
-    <div class="registration">
+    <div class="row registration justify-content-center">
         
-        <div class="textRegistration">
+        <div class="col-10 col-md-5 textRegistration">
             <h2>Pourquoi s'inscrire ?</h2>
             <p><br>
                 Vous souhaitez :
@@ -26,10 +24,9 @@
             </p>
         </div>
         
-        <div class="form">
+        <div class="col-10 col-md-5 form">
             <h2>Lancez-vous !</h2>
-            <form>
-
+            <form action="<?=htmlspecialchars($_SERVER['PHP_SELF'])?>" method="post" id="formUser">
             
             <!-- NOM -->
 
@@ -120,5 +117,6 @@
             </form>
         </div>
     </div>
-
+</div>
 <script src="/public/js/checkPass.js"></script>
+    

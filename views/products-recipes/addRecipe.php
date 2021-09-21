@@ -1,9 +1,9 @@
 <h1 class="text-white">Proposez nous vos recettes !</h1>
 
-<div class="container">
-    <div class="row">
-        <div class="addRecipText col">
-            <h3>C'est a vous de jouer !</h3>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="addRecipText col-10 col-md-5">
+            <h3 class="text-center">C'est a vous de jouer !</h3>
             <form action="" method="post" enctype="multipart/form-data">
                 <?php 
                     if($code){
@@ -70,12 +70,12 @@
                     </textarea>
                 </div>
                 <div class="text-center">
-                <button type="submit" class="btn btn-success" style="background-color: #236d5e;">Envoyé</button>
+                <button type="submit" class="btn btn-success mt-3" style="background-color: #236d5e;">Envoyé</button>
                 </div>
             </form>
             <br>
             <p>Merci pour votre contribution !</p>
         </div>
-        <div class="addRecipImg col"></div>
+        <div class="addRecipImg col-10 col-md-5 d-none d-md-block"></div>
     </div>
 </div>

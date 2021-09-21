@@ -32,13 +32,13 @@
 }
 
 html,body { 
-    height: 100vh;
+    min-height: 100vh;
     font-size: initial;
 }
 h1 {
     text-align: center;
     margin-bottom: 0px;
-    font-size: 45px;
+    font-size: 2rem;
     background-color: #236d5e;
     padding : 10px 0;
     
@@ -70,6 +70,7 @@ h5,h3{
     background-color: #236d5e !important;
     color:white;
 }
+
 .navbar {
     padding: 0%;
 }
@@ -80,7 +81,7 @@ h5,h3{
 }
 .navbar-brand {
     color: #236d5e;
-    font-size: xx-large;
+    font-size: 1.3rem;
 }
 .nav-link{
     color: #236d5e;
@@ -95,10 +96,14 @@ h5,h3{
 
 .navbar-toggler {
     background-color: #236d5e;
+    font-size: 1rem;
 }
 
 .navbar-collapse {
     justify-content: flex-end
+}
+.navbar-nav .dropdown-menu  {
+    transition: 0.5s;
 }
 .bodyRecipes{
     min-height: calc(100vh - 10vh);
@@ -153,17 +158,21 @@ footer {
 }
 .textRegistration {
     background-color: rgba(255,255,255, 0.3);
-    width: 50%;
-    width: 50%;
     padding: 10px;
     border: 2px solid grey;
     border-radius: 20px;
     margin: 15px;
-    font-size: x-large;
+    font-size: 1.2rem;
 }
+
+@media (min-width: 768px) {
+    .textRegistration {
+        font-size: 1.4rem;
+    }
+}
+
 .form {
     background-color: rgba(255,255,255, 0.3);
-    width: 50%;
     padding: 10px;
     border: 2px solid grey;
     border-radius: 20px;
@@ -180,13 +189,11 @@ footer {
     height: fit-content;
 }
 .congratulation{
-    height: 69vh;
+    height: 80vh;
     background-image: url(/public/img/Pourlecorps/liniment.jpg);
     background-size: cover;
     background-position: 50%;
     background-color: rgba(255,255,255, 0.3);
-    width: 50%;
-    width: 50%;
     padding: 10px;
     border: 2px solid grey;
     border-radius: 20px;
@@ -194,12 +201,10 @@ footer {
     font-size: x-large;
 }
 .textCongratulation{
-    height: 100%;
+    height: 80vh;
     background-size: cover;
     background-position: 50%;
     background-color: rgba(255,255,255, 0.3);
-    width: 50%;
-    width: 50%;
     padding: 10px;
     border: 2px solid grey;
     border-radius: 20px;
@@ -207,13 +212,10 @@ footer {
     font-size: x-large;
 }
 .howItWorkImg{
-    height: 100vh;
     background-image: url(/public/img/Pourlecorps/savonethuile2.jpg);
     background-size: cover;
     background-position: 50%;
     background-color: rgba(255,255,255, 0.3);
-    width: 50%;
-    width: 50%;
     padding: 10px;
     border: 2px solid grey;
     border-radius: 20px;
@@ -221,12 +223,9 @@ footer {
     font-size: x-large;
 }
 .howItWorkText{
-    height: 100vh;
     background-size: cover;
     background-position: 50%;
     background-color: rgba(255,255,255, 0.3);
-    width: 50%;
-    width: 50%;
     padding: 10px;
     border: 2px solid grey;
     border-radius: 20px;
@@ -238,13 +237,9 @@ footer {
     background-size: cover;
     background-position: 50%;
     background-color: rgba(255,255,255, 0.3);
-    width: 50%;
-    width: 50%;
-    padding: 10px;
     border: 2px solid grey;
     border-radius: 20px;
     margin: 15px;
-    font-size: x-large;
 }
 .addRecipText{
     overflow-y: auto;
@@ -252,13 +247,14 @@ footer {
     background-size: cover;
     background-position: 50%;
     background-color: rgba(255,255,255, 0.3);
-    width: 50%;
-    width: 50%;
     padding: 10px;
     border: 2px solid grey;
     border-radius: 20px;
     margin: 15px;
-    font-size: x-large;
+}
+.addRecipText label{
+    font-weight: 500;
+    font-size: 1.1rem;
 }
 
 .editUser {
@@ -275,7 +271,6 @@ footer {
     background-size: cover;
     background-position: 50%;
     background-color: rgba(255,255,255, 0.3);
-    width: 50%;
     width: 50%;
     padding: 10px;
     border: 2px solid grey;

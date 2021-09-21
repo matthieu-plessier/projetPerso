@@ -4,10 +4,10 @@
 ?>
 <h1 class="text-white">Comment ca marche ...</h1>
 
-<div class="howItWork container">
-    <div class="row">
-        <div class="howItWorkImg col"></div>
-        <div class="howItWorkText col">
+<div class="container-fluid h-100">
+    <div class="row justify-content-center h-100">
+        <div class="howItWorkImg col-10 col-md-5 d-none d-md-block"></div>
+        <div class="howItWorkText col-10 col-md-5 h-100">
             <h3>... et bien trés simplement en fait !</h3>
             <br>
             <p>
@@ -20,7 +20,7 @@
                 "Comme à la maison" est le point de rencontre de ces deux profils, une plateforme d'échange de produits et de conseils. Une réunion entre amis où on va pouvoir troquer ses produits "fait maison", donner son avis sur une recette, etc ...
             </p>
             <p>
-                N'attendez plus ! Rejoignez-nous et partagez votre expérience entre amis !
+                N'attendez plus ! Rejoignez-nous et partagez votre expérience entre amis ! 
             </p>
         </div>
     </div>
