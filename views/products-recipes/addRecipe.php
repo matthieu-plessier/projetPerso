@@ -63,7 +63,6 @@
                 <div class="form-floating">
                     <textarea class="form-control" 
                                 name="process" 
-                                placeholder="Leave a comment here" 
                                 id="floatingTextarea2" 
                                 value="<?= $process ?>"
                                 style="height: 100px">
@@ -76,6 +75,8 @@
             <br>
             <p>Merci pour votre contribution !</p>
         </div>
-        <div class="addRecipImg col-10 col-md-5 d-none d-md-block"></div>
+        <div class="addRecipImg col-10 col-md-5 d-none d-md-block">
+            
+        </div>
     </div>
 </div>

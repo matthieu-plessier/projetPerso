@@ -8,9 +8,9 @@
         echo '<div class="text-center m-0 alert'.' '.$messageCode[$code]['type'].' "><img src="https://img.icons8.com/ios-glyphs/32/000000/right.png"/>'.$messageCode[$code]['msg'].' <img src="https://img.icons8.com/ios-glyphs/32/000000/left.png"/></div>';
     }
 ?>
-<div class="editUser">
-    
-    <div class="textRegistration">
+<div class="container-fluid">
+<div class=" row editUser justify-content-center ">
+        <div class="row col-10 col-md-5 textRegistration">
         <h2>Modifiez vos recettes :</h2>
         <?php if(empty($recipes)){ ?>
             <div class="h-75 w-100 d-flex justify-content-center align-items-center">
@@ -42,7 +42,7 @@
 
     </div>
     
-    <div class="form">
+    <div class="form row col-10 col-md-5">
         <h2>Mofifiez vos infos personnelles :</h2>
         <form method="post" action="/controllers/edit-user_ctrl.php">
 
@@ -120,5 +120,6 @@
         </form>
     </div>
 </div>
+</div>
 
-<script src="/public/js/checkPass.js"></script>
+
