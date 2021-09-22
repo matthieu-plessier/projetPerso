@@ -226,8 +226,8 @@
         }
     }
     ////////////////////////////////////////////////// METHODE QUI PERMET DE SUPPRIMER UN USER /////////////////////////
-
-    public static function delete($id){
+    
+        public static function delete($id){
 
         $pdo = Database::getInstance();
 
@@ -238,7 +238,7 @@
             $sth->bindValue(':id',$id,PDO::PARAM_INT);
             $sth->execute();
             if($sth->rowCount()==0)
-                return 3;
+                return 18;
             else
                 return 10;
         }

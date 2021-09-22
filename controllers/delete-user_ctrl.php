@@ -10,5 +10,5 @@ $id = intval(trim(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT)));
 $code = intval(User::delete($id));
 
 // On redirige vers la page d'acceuil avec un code pour le message
-header('location: /views/index.php?msgCode='.$code);
+header('location: /index.php?msgCode='.$code);
 /*************************************************************/

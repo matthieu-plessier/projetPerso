@@ -15,6 +15,8 @@ $messageCode = [
     15 => ['type' => 'alert-success', 'msg' => 'La recette est bien supprimée !'],
     016 => ['type' => 'alert-danger', 'msg' => 'Aucune correspondances trouvées'],
     17 => ['type' => 'alert-success', 'msg' => 'Recette ajoutée'],
+    18 => ['type' => 'alert-danger', 'msg' => 'Votre compte est désactivé'],
+
 
 ];
 

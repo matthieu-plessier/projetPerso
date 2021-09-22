@@ -116,7 +116,7 @@
             </div>
             
             <button type="submit" class="btn btn-success" style="background-color: #236d5e;">Envoyer</button>
-            <button type="button" class="btn btn-outline-danger">Supprimer mon compte</button>
+            <a href="/controllers/delete-user_ctrl.php"  class="btn btn-outline-danger">Supprimer mon compte</a>
         </form>
     </div>
 </div>
