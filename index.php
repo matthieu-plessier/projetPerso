@@ -1,7 +1,14 @@
 <?php
     session_start();
+    $code = null;
+    $code = trim(filter_input(INPUT_GET, 'code', FILTER_SANITIZE_NUMBER_INT));
     include(dirname(__FILE__).'/views/templates/header.php');
 ?>
+
+
+<?php if(!empty($code)){ ?>
+    <script>alert('<?=addslashes($messageCode[$code]['msg'])?>')</script>
+<?php } ?>
 <!-- FIN NAVBAR -->
 
 <div class="main row justify-content-center justify-content-md-start">

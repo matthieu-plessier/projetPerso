@@ -14,6 +14,11 @@ if($user){
         //On connecte le user
         $_SESSION['user'] = $user;
         header('location: /index.php');
-    
+        exit;
+    }else{
+        header('location: /index.php?code=19');
+        exit;
     }
+}else{
+    header('location: /index.php?code=19');
 }

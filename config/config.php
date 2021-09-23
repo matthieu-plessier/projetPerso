@@ -1,22 +1,23 @@
 <?php
 $messageCode = [
-
-    001=> ['type' => 'alert-danger', 'msg' => 'Une erreur SQL est survenue'],
-    002 => ['type' => 'alert-danger', 'msg' => 'Le pseudo existe déjà'],
+    1=> ['type' => 'alert-danger', 'msg' => 'Une erreur SQL est survenue'],
+    2 => ['type' => 'alert-danger', 'msg' => 'Le pseudo existe déjà'],
     3=> ['type' => 'alert-success', 'msg' => 'Modifications validées !'],
-    004 => ['type' => 'alert-danger', 'msg' => 'L\'id n\'est pas au bon format!!'],
-    005 => ['type' => 'alert-success', 'msg' => 'Pour valider votre inscription, vérifiez vos mails !'],
-    006 => ['type' => 'alert-danger', 'msg' => 'l\'id doit être renseigné!!' ],
+    4 => ['type' => 'alert-danger', 'msg' => 'L\'id n\'est pas au bon format!!'],
+    5 => ['type' => 'alert-success', 'msg' => 'Pour valider votre inscription, vérifiez vos mails !'],
+    6 => ['type' => 'alert-danger', 'msg' => 'l\'id doit être renseigné!!' ],
+    7 => ['type' => 'alert-danger', 'msg' => 'erreur de mot de passe' ],
     8 => ['type' => 'alert-danger', 'msg' => 'Votre recette est bien supprimée.' ],
-    010 => ['type' => 'alert-danger', 'msg' => 'Cet utilisateur n\'existe pas'],
-    011 => ['type' => 'alert-danger', 'msg' => 'La date entrée n\'est pas valide'],
-    012 => ['type' => 'alert-success', 'msg' => 'Le rendez-vous est enregistré'],
-    013 => ['type' => 'alert-success', 'msg' => 'La date n\'est pas au bon format'],
-    014 => ['type' => 'alert-success', 'msg' => 'Le rdv est bien supprimé !'],
+    10 => ['type' => 'alert-danger', 'msg' => 'Cet utilisateur n\'existe pas'],
+    11 => ['type' => 'alert-danger', 'msg' => 'La date entrée n\'est pas valide'],
+    12 => ['type' => 'alert-success', 'msg' => 'Le rendez-vous est enregistré'],
+    13 => ['type' => 'alert-success', 'msg' => 'La date n\'est pas au bon format'],
+    14 => ['type' => 'alert-success', 'msg' => 'Le rdv est bien supprimé !'],
     15 => ['type' => 'alert-success', 'msg' => 'La recette est bien supprimée !'],
-    016 => ['type' => 'alert-danger', 'msg' => 'Aucune correspondances trouvées'],
+    16 => ['type' => 'alert-danger', 'msg' => 'Aucune correspondances trouvées'],
     17 => ['type' => 'alert-success', 'msg' => 'Recette ajoutée'],
     18 => ['type' => 'alert-danger', 'msg' => 'Votre compte est désactivé'],
+    19 => ['type' => 'alert-danger', 'msg' => 'Identifiant invalide'],
 
 
 ];

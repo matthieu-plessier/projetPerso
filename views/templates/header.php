@@ -131,7 +131,6 @@ if(!empty($_SESSION)){
                         </div>
                     </form>
 
-
                 </div>
             </div>
         </div>

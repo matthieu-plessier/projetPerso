@@ -1,5 +1,5 @@
 <script src="/public/js/addIngredients.js"></script>
-<script src="/public/js/checkPass.js"></script>
+
 
 <script src="/public/app/bootstrap/bootstrap.js"></script>
 
