@@ -3,10 +3,11 @@ $messageCode = [
 
     001=> ['type' => 'alert-danger', 'msg' => 'Une erreur SQL est survenue'],
     002 => ['type' => 'alert-danger', 'msg' => 'Le pseudo existe déjà'],
-    3 => ['type' => 'alert-success', 'msg' => 'Modifications validées !'],
+    3=> ['type' => 'alert-success', 'msg' => 'Modifications validées !'],
     004 => ['type' => 'alert-danger', 'msg' => 'L\'id n\'est pas au bon format!!'],
     005 => ['type' => 'alert-success', 'msg' => 'Pour valider votre inscription, vérifiez vos mails !'],
     006 => ['type' => 'alert-danger', 'msg' => 'l\'id doit être renseigné!!' ],
+    8 => ['type' => 'alert-danger', 'msg' => 'Votre recette est bien supprimée.' ],
     010 => ['type' => 'alert-danger', 'msg' => 'Cet utilisateur n\'existe pas'],
     011 => ['type' => 'alert-danger', 'msg' => 'La date entrée n\'est pas valide'],
     012 => ['type' => 'alert-success', 'msg' => 'Le rendez-vous est enregistré'],
