@@ -1,5 +1,7 @@
 <?php
 require_once(dirname(__FILE__).'/../../models/users.php');
+require_once(dirname(__FILE__).'/../../utils/regex.php');
+
 if(!empty($_SESSION)){
     $resultCheckUser = User::checkUser($_SESSION['user']->id);
 }
@@ -107,10 +109,10 @@ if(!empty($_SESSION)){
                         <div class="modal-body">
                             <div class="mb-3">
                                 <label for="mail" class="form-label">Votre mail :</label>
-                                <input type="text" name="mail"
+                                <input type="email" name="mail"
                                     class="form-control <?=isset($error['mail']) ? 'errorField' : ''?>"
                                     value="<?=htmlentities($mail ?? '') ?>" autocomplete="mail"
-                                    placeholder="ex : johndoe@exemple.com" pattern="<?=REGEX_EMAIL?>" id="mail">
+                                    placeholder="ex : johndoe@exemple.com" required id="mail">
                                 <div class="error"><?=$error['mail'] ?? ''?></div>
                             </div>
 
@@ -120,7 +122,7 @@ if(!empty($_SESSION)){
                                 <input type="password" name="password"
                                     class="form-control <?=isset($error['password']) ? 'errorField' : ''?>"
                                     value="<?=htmlentities($password ?? '') ?>" 
-                                    placeholder="ex : 123abc456" autocomplete="new-password" id="password">
+                                    placeholder="ex : 123abc456" required autocomplete="new-password" id="password">
                             </div>
                             <div class="error"><?=$error['password'] ?? ''?></div>
                         </div>
