@@ -9,7 +9,7 @@
     }
 ?>
 <div class="container-fluid">
-<div class=" row editUser justify-content-center ">
+<div class="row editUser justify-content-center">
         <div class="row col-10 col-md-5 textRegistration">
         <h2>Modifiez vos recettes :</h2>
         <?php if(empty($recipes)){ ?>
@@ -27,7 +27,7 @@
             </thead>
 
             <tbody>
-                <?php 
+                <?php
                     foreach($recipes as $recipe) : ?>
                 <tr class="align-middle">
                     <td><?=$recipe->name ?? '' ?></td>
@@ -116,7 +116,7 @@
             </div>
             
             <button type="submit" class="btn btn-success" style="background-color: #236d5e;">Envoyer</button>
-            <a href="/controllers/delete-user_ctrl.php"  class="btn btn-outline-danger">Supprimer mon compte</a>
+            <!-- <a href="/controllers/delete-user_ctrl.php"  class="btn btn-outline-danger">Supprimer mon compte</a> -->
         </form>
     </div>
 </div>

@@ -83,7 +83,7 @@ if(!empty($_SESSION)){
                         <li class="nav-item dropdown ms-3 fw-bold">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                <?=$_SESSION['user']->firstname?> <?=$_SESSION['user']->lastname?>
+                                <?= $resultCheckUser->firstname?> <?= $resultCheckUser->lastname?>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                                 <li><a href="../../controllers/profil-user_ctrl.php" class="nav-link me-2" aria-current="page">Profil</a></li>

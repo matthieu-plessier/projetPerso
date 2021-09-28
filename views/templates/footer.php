@@ -5,8 +5,9 @@
 
 
 <footer class="text-center text-white">
-Comme à la maison / Plessier Matthieu &copy; <strong><span>2021</span></strong>
-<p>Tous droits réservés.</p>
+ <strong><span>Comme à la maison / Plessier Matthieu &copy; 2021</span></strong>
+<p>Tous droits réservés. <a href="/mentionsLégales.php" class="text-decoration-none text-white">Mentions Légales</a></p>
+
 </footer>
 </body>
 

@@ -1,17 +1,19 @@
 <?php
 
 session_start();
+
 require_once(dirname(__FILE__).'/../models/users.php');
 require_once(dirname(__FILE__).'/../models/recipes.php');
 require_once(dirname(__FILE__).'/../utils/regex.php');
 require_once(dirname(__FILE__).'/../config/config.php');
+
 $code = NULL;
 
 // On récup l'ID en GET
 $id = trim(filter_input(INPUT_GET,'id',FILTER_SANITIZE_NUMBER_INT));
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-
+  
     // Lastname : Nettoyage et validation
     $lastname = trim(filter_input(INPUT_POST, 'lastname', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES));
     // On vérifie que ce n'est pas vide

@@ -4,7 +4,7 @@ require_once(dirname(__FILE__) . '/../utils/regex.php');
 require_once(dirname(__FILE__) . '/../models/users.php');
 require_once(dirname(__FILE__) . '/../config/config.php');
 
-
+$code = NULL;
 
 // ---------------------------------- ICI ON RECUPERE LE PROFIL USER ---------------------------------------------------
 
@@ -13,8 +13,10 @@ $resultCheckUser = User::checkUser($_SESSION['user']->id);
 $errorsArray = array();
 /*************************************/
 
+$id = $resultCheckUser->id;
+
 // Nettoyage de l'id passé en GET dans l'url
-$id = intval(trim(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT)));
+//$id = intval(trim(filter_input(INPUT_GET, FILTER_SANITIZE_NUMBER_INT)));
 /*************************************************************/
 
 //On ne controle que s'il y a des données envoyées 
@@ -86,12 +88,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $password = password_hash($password1, PASSWORD_DEFAULT);
     }
-
+  
     // Si il n'y a pas d'erreurs, on met à jour le user.
     if (empty($errorsArray)) {
 
         $user = new User($resultCheckUser->id, $lastname, $firstname, $mail, $password);
-        $result = $user->update($id);
+
+        $result = $user->update();
+
         if ($result === true) {
             header('location: /controllers/profil-user_ctrl.php?messageCode=3');
         } else {
@@ -112,6 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         header('location: /controllers/profil-user_ctrl.php?msgCode=3');
     }
+
     /*************************************************************/
 }
 include(dirname(__FILE__) . '/../views/templates/header.php');

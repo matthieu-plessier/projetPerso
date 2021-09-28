@@ -203,7 +203,7 @@
     public function upDate()
     {
         $sql ="UPDATE  `user` 
-                SET `lastname`= :lastname, `firstname`= :firstname, `mail`= :email, `password1`= :password1, `password2`= :password2
+                SET `lastname`= :lastname, `firstname`= :firstname, `mail`= :email, `password`= :password1
                 WHERE `id` = :id;";
 
                 $req = $this->_pdo->prepare($sql);
@@ -220,7 +220,7 @@
         try {
             if ($req->execute())
             // retourne les données récup
-            return 003;
+            return 3;
         } catch (PDOException $ex) {
             return false;
         }
