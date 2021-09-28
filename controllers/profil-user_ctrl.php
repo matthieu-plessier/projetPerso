@@ -11,6 +11,8 @@ $code = NULL;
 
 // On récup l'ID en GET
 $id = trim(filter_input(INPUT_GET,'id',FILTER_SANITIZE_NUMBER_INT));
+$resultCheckUser = trim(filter_input(INPUT_POST,'resultCheckUser',FILTER_SANITIZE_NUMBER_INT));
+
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
   

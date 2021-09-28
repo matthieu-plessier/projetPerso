@@ -44,7 +44,7 @@
     
     <div class="form row col-10 col-md-5">
         <h2>Mofifiez vos infos personnelles :</h2>
-        <form method="post" action="/controllers/edit-user_ctrl.php">
+        <form method="post" action="/controllers/profil-user_ctrl.php">
 
         
         <!-- NOM -->
