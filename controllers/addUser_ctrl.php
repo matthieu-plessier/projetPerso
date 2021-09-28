@@ -81,7 +81,7 @@ if($password1!=$password2){
 
 // Si aucune erreur, on enregistre en BDD
 if(empty($errorsArray)){
-    $user = new User('', $lastname, $firstname, $email, $password, 0);
+    $user = new User('', $lastname, $firstname, $email, $password,'','','',0,'','',1 );
     $code = $user->create();
 
 }

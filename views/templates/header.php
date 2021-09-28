@@ -87,6 +87,9 @@ if(!empty($_SESSION)){
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                                 <li><a href="../../controllers/profil-user_ctrl.php" class="nav-link me-2" aria-current="page">Profil</a></li>
+                                <li><a href="../../controllers/edit-recipes_ctrl.php" class="nav-link me-2" aria-current="page">Vos recettes</a></li>
+                                <li><a href="../../controllers/edit-product_ctrl.php" class="nav-link me-2" aria-current="page">Vos produits</a></li></li>
+
                                 <li><a class="nav-link me-2" aria-current="page"
                                         href="/controllers/disconnectUser_ctrl.php">Déconnexion</a></li>
                             </ul>

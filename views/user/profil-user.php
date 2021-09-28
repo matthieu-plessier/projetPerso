@@ -44,7 +44,7 @@
     
     <div class="form row col-10 col-md-5">
         <h2>Mofifiez vos infos personnelles :</h2>
-        <form method="post" action="/controllers/profil-user_ctrl.php">
+        <form method="post" action="/controllers/edit-user_ctrl.php">
 
         
         <!-- NOM -->
@@ -116,7 +116,7 @@
             </div>
             
             <button type="submit" class="btn btn-success" style="background-color: #236d5e;">Envoyer</button>
-            <!-- <a href="/controllers/delete-user_ctrl.php"  class="btn btn-outline-danger">Supprimer mon compte</a> -->
+            <a href="/controllers/delete-user_ctrl.php"  class="btn btn-outline-danger">Supprimer mon compte</a>
         </form>
     </div>
 </div>

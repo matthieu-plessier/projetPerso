@@ -71,9 +71,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $pdo = Database::getInstance();
             $pdo->beginTransaction();
 
+            if ($isAuthorized) {
             $recipe = new Recipe('', $nameRecipe, $process, $type);
             $code = $recipe->updateRecipe($idRecipe);
-
+            }
             if($code != 3){
                 throw new Exception($code);
             }
@@ -192,11 +193,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 
 // -------------------------- -------AFFICHAGE DES VUES ----------------------------------------------------------------
-$recipes = Recipe::findOne($idRecipe);
+$recipes = Recipe::getRecipe($_SESSION['user']->id);
+
 $ingredients = Ingredient::get($idRecipe);
 
 include(dirname(__FILE__).'/../views/templates/header.php');
 
-include(dirname(__FILE__).'/../views/user/profil-recipe.php');
+include(dirname(__FILE__).'/../views/products-recipes/edit-recipes.php');
 
 include(dirname(__FILE__).'/../views/templates/footer.php');

@@ -66,12 +66,12 @@
                 return $ex;
             }
             
-        
+        //////////////////////////////////////// CREATION D UN USER ///////////////////////
         }
         public function create(){
             try{
                 $sql = 'INSERT INTO `user` (`lastname`, `mail`, `password`, `firstname`, `confirmation_token`, `status`, `id_role`) 
-                        VALUES (:lastname, :mail, :password, :firstname, :confirmation_token, :status, 1);';
+                        VALUES (:lastname, :mail, :password, :firstname, :confirmation_token, :status, :id_role);';
                 
                 $sth = $this->_pdo->prepare($sql);
     
@@ -83,6 +83,8 @@
                 $sth->bindValue(':firstname',$this->_firstname,PDO::PARAM_STR);
                 $sth->bindValue(':confirmation_token',$token,PDO::PARAM_STR);
                 $sth->bindValue(':status',$this->_status,PDO::PARAM_STR);
+                $sth->bindValue(':id_role',$this->_status,PDO::PARAM_INT);
+
     
                 
                 if($sth->execute()){
@@ -247,4 +249,16 @@
         }
 
     }
+    /////////////////////////////////////////////////// PROFIL ADMIN //////////////////////////////////////////////////
+
+        public static function isAuthorized($id){
+            $idUser = $_SESSION['user']->id;
+            if ($idUser==$id){
+                return true;
+            }else{
+                false;
+            }
+        }
+        
+
     }
