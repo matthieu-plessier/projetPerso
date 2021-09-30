@@ -120,5 +120,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     /*************************************************************/
 }
 include(dirname(__FILE__) . '/../views/templates/header.php');
-include(dirname(__FILE__) . '/../views/edit-user.php');
+include(dirname(__FILE__) . '/../views/user/profil-user.php');
 include(dirname(__FILE__) . '/../views/templates/footer.php');

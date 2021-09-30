@@ -10,7 +10,7 @@
 ?>
 <div class="container-fluid">
 <div class="row editUser justify-content-center">
-        <div class="row col-10 col-md-5 textRegistration">
+        <!-- <div class="row col-10 col-md-5 textRegistration">
         <h2>Modifiez vos recettes :</h2>
         <?php if(empty($recipes)){ ?>
             <div class="h-75 w-100 d-flex justify-content-center align-items-center">
@@ -40,7 +40,7 @@
         </table>
         <?php } ?>
 
-    </div>
+    </div> -->
     
     <div class="form row col-10 col-md-5">
         <h2>Mofifiez vos infos personnelles :</h2>

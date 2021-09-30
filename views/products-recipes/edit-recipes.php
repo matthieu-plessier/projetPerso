@@ -1,5 +1,7 @@
+<h1 class="text-white">Votre profil :</h1>
+
 <div class="row col-10 col-md-5 textRegistration">
-        <h2>Modifiez vos recettes :</h2>
+            <h2>Modifiez vos recettes :</h2>
         <?php if(empty($recipes)){ ?>
             
 
@@ -21,7 +23,7 @@
                     foreach($recipes as $recipe) : ?>
                 <tr class="align-middle">
                     <td><?=$recipe->name ?? '' ?></td>
-                    <td><a href="/controllers/edit-recipes_ctrl.php?id=<?=$recipe->id ?>" style="color: #236d5e;">Modifier</a></td>
+                    <td><a href="/controllers/updateRecipe_ctrl.php?id=<?=$recipe->id ?>" style="color: #236d5e;">Modifier</a></td>
                     <td><a href="/controllers/delete-recipe_ctrl.php?id=<?=$recipe->id ?>"><img
                                 src="https://img.icons8.com/color/48/000000/delete-forever.png/"></a></td>
                 </tr>
