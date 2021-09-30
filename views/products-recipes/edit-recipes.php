@@ -1,4 +1,4 @@
-<h1 class="text-white">Votre profil :</h1>
+<h1 class="text-white">Vos recettes :</h1>
 
 <div class="row col-10 col-md-5 textRegistration">
             <h2>Modifiez vos recettes :</h2>
@@ -17,7 +17,7 @@
                 <th scope="col">Modifier</th>
                 <th scope="col">Supprimer</th>
             </thead>
-
+            
             <tbody>
                 <?php
                     foreach($recipes as $recipe) : ?>
@@ -31,5 +31,5 @@
             </tbody>
         </table>
         <?php } ?>
-
+        
     </div>

@@ -73,10 +73,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $pdo = Database::getInstance();
             $pdo->beginTransaction();
 
-            
+            // if ($isAuthorized) {
             $recipe = new Recipe('', $nameRecipe, $process, $type);
             $code = $recipe->updateRecipe($idRecipe);
-            
+            // }
             if($code != 3){
                 throw new Exception($code);
             }
