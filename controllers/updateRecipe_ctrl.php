@@ -202,7 +202,6 @@ $ingredients = Ingredient::get($idRecipe);
 
 include(dirname(__FILE__).'/../views/templates/header.php');
 
-
 include(dirname(__FILE__).'/../views/user/updateRecipe.php');
 
 include(dirname(__FILE__).'/../views/templates/footer.php');
