@@ -17,6 +17,7 @@ $errorsArray = array();
 $code = null;
 $ingredientsArray = [];
 $count = 0;
+$title = "Ajouter une recette";
 /*************************************/
 
 //On ne controle que s'il y a des données envoyées

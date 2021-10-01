@@ -27,15 +27,15 @@
     <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Proposer votre produit</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Proposer votre produit <br>(En cours de réalisation)</h5>
 
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div>Remplissez le formulaire ci-dessous pour ajouter votre produit au magasin</div><br>
                 
-                <label for="nickname" type="text" class="form-label">Votre pseudo</label>
-                <input class="form-control" type="text" placeholder="Pseudo" aria-label="default input example">
+                <label for="nickname" type="text" class="form-label">Votre mail</label>
+                <input class="form-control" type="mail" placeholder="Pseudo" aria-label="default input example">
                 <br>
                 <div class="mb-3">
                     <label for="formFile" class="form-label">Ajouter une image</label>
@@ -57,8 +57,8 @@
                 <div>Merci pour votre contribution !</div><br>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Annuler</button>
-                <button type="button" class="btn btn-outline-success">Proposer !</button>
+                <button type="button" class="btn btn" data-bs-dismiss="modal">Annuler</button>
+                <button type="button" class="btn btn" style="background-color: #236d5e;">Proposer !</button>
             </div>
         </div>
     </div>

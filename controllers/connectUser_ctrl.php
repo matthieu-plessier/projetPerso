@@ -3,6 +3,8 @@ session_start();
 
 include dirname(__FILE__).'/../models/users.php';
 
+$title = "Connection";
+
 $email = trim(filter_input(INPUT_POST, 'mail', FILTER_SANITIZE_EMAIL));
 $passwordPost = isset($_POST['password']) ? $_POST['password'] : '';
 

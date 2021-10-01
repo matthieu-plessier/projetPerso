@@ -8,7 +8,7 @@ require_once(dirname(__FILE__) . '/../models/ingredients.php');
 require_once(dirname(__FILE__) . '/../config/config.php');
 
 $code = null;
-
+$title ="Modification de la recette";
 // --------------------------------- ICI ON RECUPERE LES RECETTES PAR USER ---------------------------------------------
 
 

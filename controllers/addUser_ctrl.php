@@ -7,6 +7,7 @@ include(dirname(__FILE__).'/../models/users.php');
 // Initialisation du tableau d'erreurs
 $errorsArray = array();
 $code = null;
+$title ="Inscription";
 /*************************************/
 
 //On ne controle que s'il y a des données envoyées

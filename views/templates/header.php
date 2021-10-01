@@ -16,7 +16,7 @@ if(!empty($_SESSION)){
     <link rel="stylesheet" href="/public/css/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="/public/css/style.css">
     <link rel="stylesheet" href="/public/css/media.css">
-    <title>Projet perso comme à la maison vente de produit fait maison</title>
+    <title><?=$title ?? "Comme à la maison"?></title>
 </head>
 
 <body>

@@ -5,7 +5,7 @@ require_once(dirname(__FILE__) . '/../models/users.php');
 require_once(dirname(__FILE__) . '/../config/config.php');
 
 $code = NULL;
-
+$title ="Modifier vos données personnelles";
 // ---------------------------------- ICI ON RECUPERE LE PROFIL USER ---------------------------------------------------
 
 $resultCheckUser = User::checkUser($_SESSION['user']->id);
