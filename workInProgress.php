@@ -9,7 +9,7 @@ include(dirname(__FILE__).'/views/templates/header.php');
             
             <div class="textWorkInProgress">
                 <p>Bientôt, avec "Comme à la maison" vous pourrez échanger vos produits entre amis !
-                En plus de pouvoir publier vos recettes, vous aurez bientôt la possibilité d'échanger entre adhérents vos produits fait maison. En quelques clics retrouvez les produits dont vous avez besoin et contacter directement la personne qui la préparé !</p>
+                En plus de pouvoir publier vos recettes, vous aurez bientôt la possibilité d'échanger entre adhérents vos produits faits maison. En quelques clics, retrouvez les produits dont vous avez besoin et contactez directement la personne qui l'a préparé !</p>
             </div>
         </div>
 

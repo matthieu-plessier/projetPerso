@@ -8,7 +8,7 @@
                 
 
                 <div class="h-75 w-100 d-flex justify-content-center align-items-center">
-                    <p class="text-center">Vous n'avez pas de recettes : <br><a class="btn btn-success" style="background-color: #236d5e;" href="/controllers/addRecipe_ctrl.php"> Ajoutez en une !</a></p>
+                    <p class="text-center">Vous n'avez pas de recettes : <br><a class="btn btn-success" style="background-color: #236d5e;" href="/controllers/addRecipe_ctrl.php"> Ajoutez-en une !</a></p>
                     
                 </div>
             <?php }else{ ?>

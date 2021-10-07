@@ -17,7 +17,7 @@
             <h5 class="card-title">Pour proposer vos produits c'est ici !</h5>
 
             <a href="/workInProgress.php" class="btn btnPropose " >Proposer</a>
-            <a href="/howItWork.php" class="btn btnPropose2 mt-2">Comment ca marche</a>
+            <a href="/howItWork.php" class="btn btnPropose2 mt-2">Comment ca marche ?</a>
 
         </div>
     </div>

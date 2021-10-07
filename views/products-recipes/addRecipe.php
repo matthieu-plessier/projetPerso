@@ -3,7 +3,7 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="addRecipText col-10 col-md-5">
-            <h3 class="text-center">C'est a vous de jouer !</h3>
+            <h3 class="text-center">C'est à vous de jouer !</h3>
             <form action="" method="post" enctype="multipart/form-data">
                 <?php 
                     if($code){
@@ -21,12 +21,12 @@
                             class="form-control" 
                             id="nameRecipe" 
                             name="nameRecipe" 
-                            placeholder="ex : créme pour les mains"
+                            placeholder="ex : crème pour les mains"
                             pattern="<?=REGEX_STR_NO_NUMBER?>">
                 </div>
                 <label for="type" class="form-label">Type de produit</label>
                 <select class="form-select form-select-lg mb-3" name="type" aria-label=".form-select-lg example">
-                    <option selected>Cosmétique ou produits ménager ?</option>
+                    <option selected>Cosmétique ou produit ménager ?</option>
                     <option value="1">Cosmétique</option>
                     <option value="2">Produit ménager</option>
                 </select>
@@ -69,7 +69,7 @@
                     </textarea>
                 </div>
                 <div class="text-center">
-                <button type="submit" class="btn btn-success mt-3" style="background-color: #236d5e;">Envoyé</button>
+                <button type="submit" class="btn btn-success mt-3" style="background-color: #236d5e;">Envoyer</button>
                 </div>
             </form>
             <br>

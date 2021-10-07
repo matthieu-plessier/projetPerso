@@ -14,13 +14,13 @@
                 Vous souhaitez :
                 <ul>
                     <li>Consommer responsable ?</li>
-                    <li>Echanger des produits "fait maison" ?</li>
+                    <li>Echanger des produits "faits maison" ?</li>
                     <li>Rencontrer des personnes aux mêmes centres d'intérêts ?</li>
                     <li>Partager vos connaissances et votre savoir faire ?</li>
                     <li>Découvrir une nouvelle manière de consommer ?</li>
                 </ul><br>
                 Dans ce cas, plus de temps à perdre.<br>
-                Remplissez le formulaire ci-joint et rejoignez notre grande famille, "Comme à la maison" !
+                Remplissez le formulaire ci-joint et rejoignez notre grande famille "Comme à la maison" !
             </p>
         </div>
         
@@ -113,7 +113,7 @@
                     <div class="error alert-danger text-center"><?=$errorsArray['password2'] ?? ''?></div>
                 </div>
                 
-                <button type="submit" class="btn btn-success" style="background-color: #236d5e;">Envoyé</button>
+                <button type="submit" class="btn btn-success" style="background-color: #236d5e;">Envoyer</button>
             </form>
         </div>
     </div>
