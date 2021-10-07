@@ -1,10 +1,13 @@
 <?php
+
+
+
 $messageCode = [
     1=> ['type' => 'alert-danger', 'msg' => 'Une erreur SQL est survenue'],
-    2 => ['type' => 'alert-danger', 'msg' => 'Le pseudo existe déjà'],
+    2=> ['type' => 'alert-danger', 'msg' => 'Le pseudo existe déjà'],
     3=> ['type' => 'alert-success', 'msg' => 'Modifications validées !'],
-    4 => ['type' => 'alert-danger', 'msg' => 'L\'id n\'est pas au bon format!!'],
-    5 => ['type' => 'alert-success', 'msg' => 'Pour valider votre inscription, vérifiez vos mails !'],
+    4=> ['type' => 'alert-danger', 'msg' => 'L\'id n\'est pas au bon format!!'],
+    5=> ['type' => 'alert-success', 'msg' => 'Pour valider votre inscription, vérifiez vos mails !'],
     6 => ['type' => 'alert-danger', 'msg' => 'l\'id doit être renseigné!!' ],
     7 => ['type' => 'alert-danger', 'msg' => 'erreur de mot de passe' ],
     8 => ['type' => 'alert-danger', 'msg' => 'Votre recette est bien supprimée.' ],

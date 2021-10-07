@@ -1,6 +1,8 @@
 <?php
-
+require_once dirname(__FILE__).'/../config/config.php';
 // SINGLETON
+
+// Création de la base de données
 class Database{
 
     private static $_pdo;

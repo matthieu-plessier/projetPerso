@@ -1,8 +1,8 @@
 <h1 class="text-white">Modifier vos recettes !</h1>
 
-<div class="container">
-    <div class="row">
-        <div class="addRecipText col">
+<div class="container-fluid p-0 min-vh-100">
+    <div class="row justify-content-center">
+        <div class="addRecipText col-10 col-md-5">
             <h3>C'est a vous de jouer !</h3>
             <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>?id=<?= $idRecipe ?>" method="post" enctype="multipart/form-data">
                 <?php 
@@ -91,6 +91,6 @@
             <br>
             <p>Merci pour votre contribution !</p>
         </div>
-        <div class="profilRecip col"></div>
+        <div class="profilRecip col-10 col-md-5 d-none d-md-block"></div>
     </div>
 </div>
